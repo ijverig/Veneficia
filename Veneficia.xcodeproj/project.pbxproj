@@ -1,0 +1,501 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FFBEF04718F3304400006CFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04618F3304400006CFE /* Foundation.framework */; };
+		FFBEF04918F3304400006CFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04818F3304400006CFE /* CoreGraphics.framework */; };
+		FFBEF04B18F3304400006CFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04A18F3304400006CFE /* UIKit.framework */; };
+		FFBEF04D18F3304400006CFE /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04C18F3304400006CFE /* SpriteKit.framework */; };
+		FFBEF05318F3304400006CFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF05118F3304400006CFE /* InfoPlist.strings */; };
+		FFBEF05518F3304400006CFE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF05418F3304400006CFE /* main.m */; };
+		FFBEF05918F3304400006CFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF05818F3304400006CFE /* AppDelegate.m */; };
+		FFBEF05C18F3304400006CFE /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF05A18F3304400006CFE /* Main_iPhone.storyboard */; };
+		FFBEF05F18F3304400006CFE /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF05D18F3304400006CFE /* Main_iPad.storyboard */; };
+		FFBEF06218F3304400006CFE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF06118F3304400006CFE /* ViewController.m */; };
+		FFBEF06518F3304400006CFE /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF06418F3304400006CFE /* MyScene.m */; };
+		FFBEF06718F3304400006CFE /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF06618F3304400006CFE /* Spaceship.png */; };
+		FFBEF06918F3304400006CFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF06818F3304400006CFE /* Images.xcassets */; };
+		FFBEF07018F3304400006CFE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF06F18F3304400006CFE /* XCTest.framework */; };
+		FFBEF07118F3304400006CFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04618F3304400006CFE /* Foundation.framework */; };
+		FFBEF07218F3304400006CFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04A18F3304400006CFE /* UIKit.framework */; };
+		FFBEF07A18F3304400006CFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF07818F3304400006CFE /* InfoPlist.strings */; };
+		FFBEF07C18F3304400006CFE /* VeneficiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF07B18F3304400006CFE /* VeneficiaTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FFBEF07318F3304400006CFE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FFBEF03B18F3304400006CFE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FFBEF04218F3304400006CFE;
+			remoteInfo = Veneficia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FFBEF04318F3304400006CFE /* Veneficia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Veneficia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFBEF04618F3304400006CFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FFBEF04818F3304400006CFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FFBEF04A18F3304400006CFE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FFBEF04C18F3304400006CFE /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		FFBEF05018F3304400006CFE /* Veneficia-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Veneficia-Info.plist"; sourceTree = "<group>"; };
+		FFBEF05218F3304400006CFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FFBEF05418F3304400006CFE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FFBEF05618F3304400006CFE /* Veneficia-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Veneficia-Prefix.pch"; sourceTree = "<group>"; };
+		FFBEF05718F3304400006CFE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FFBEF05818F3304400006CFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FFBEF05B18F3304400006CFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		FFBEF05E18F3304400006CFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		FFBEF06018F3304400006CFE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FFBEF06118F3304400006CFE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FFBEF06318F3304400006CFE /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
+		FFBEF06418F3304400006CFE /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
+		FFBEF06618F3304400006CFE /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
+		FFBEF06818F3304400006CFE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FFBEF06E18F3304400006CFE /* VeneficiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VeneficiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FFBEF06F18F3304400006CFE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FFBEF07718F3304400006CFE /* VeneficiaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VeneficiaTests-Info.plist"; sourceTree = "<group>"; };
+		FFBEF07918F3304400006CFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FFBEF07B18F3304400006CFE /* VeneficiaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VeneficiaTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FFBEF04018F3304400006CFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBEF04918F3304400006CFE /* CoreGraphics.framework in Frameworks */,
+				FFBEF04B18F3304400006CFE /* UIKit.framework in Frameworks */,
+				FFBEF04D18F3304400006CFE /* SpriteKit.framework in Frameworks */,
+				FFBEF04718F3304400006CFE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFBEF06B18F3304400006CFE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBEF07018F3304400006CFE /* XCTest.framework in Frameworks */,
+				FFBEF07218F3304400006CFE /* UIKit.framework in Frameworks */,
+				FFBEF07118F3304400006CFE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FFBEF03A18F3304400006CFE = {
+			isa = PBXGroup;
+			children = (
+				FFBEF04E18F3304400006CFE /* Veneficia */,
+				FFBEF07518F3304400006CFE /* VeneficiaTests */,
+				FFBEF04518F3304400006CFE /* Frameworks */,
+				FFBEF04418F3304400006CFE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FFBEF04418F3304400006CFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FFBEF04318F3304400006CFE /* Veneficia.app */,
+				FFBEF06E18F3304400006CFE /* VeneficiaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FFBEF04518F3304400006CFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FFBEF04618F3304400006CFE /* Foundation.framework */,
+				FFBEF04818F3304400006CFE /* CoreGraphics.framework */,
+				FFBEF04A18F3304400006CFE /* UIKit.framework */,
+				FFBEF04C18F3304400006CFE /* SpriteKit.framework */,
+				FFBEF06F18F3304400006CFE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FFBEF04E18F3304400006CFE /* Veneficia */ = {
+			isa = PBXGroup;
+			children = (
+				FFBEF05718F3304400006CFE /* AppDelegate.h */,
+				FFBEF05818F3304400006CFE /* AppDelegate.m */,
+				FFBEF05A18F3304400006CFE /* Main_iPhone.storyboard */,
+				FFBEF05D18F3304400006CFE /* Main_iPad.storyboard */,
+				FFBEF06018F3304400006CFE /* ViewController.h */,
+				FFBEF06118F3304400006CFE /* ViewController.m */,
+				FFBEF06318F3304400006CFE /* MyScene.h */,
+				FFBEF06418F3304400006CFE /* MyScene.m */,
+				FFBEF06618F3304400006CFE /* Spaceship.png */,
+				FFBEF06818F3304400006CFE /* Images.xcassets */,
+				FFBEF04F18F3304400006CFE /* Supporting Files */,
+			);
+			path = Veneficia;
+			sourceTree = "<group>";
+		};
+		FFBEF04F18F3304400006CFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFBEF05018F3304400006CFE /* Veneficia-Info.plist */,
+				FFBEF05118F3304400006CFE /* InfoPlist.strings */,
+				FFBEF05418F3304400006CFE /* main.m */,
+				FFBEF05618F3304400006CFE /* Veneficia-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFBEF07518F3304400006CFE /* VeneficiaTests */ = {
+			isa = PBXGroup;
+			children = (
+				FFBEF07B18F3304400006CFE /* VeneficiaTests.m */,
+				FFBEF07618F3304400006CFE /* Supporting Files */,
+			);
+			path = VeneficiaTests;
+			sourceTree = "<group>";
+		};
+		FFBEF07618F3304400006CFE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FFBEF07718F3304400006CFE /* VeneficiaTests-Info.plist */,
+				FFBEF07818F3304400006CFE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FFBEF04218F3304400006CFE /* Veneficia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFBEF07F18F3304400006CFE /* Build configuration list for PBXNativeTarget "Veneficia" */;
+			buildPhases = (
+				FFBEF03F18F3304400006CFE /* Sources */,
+				FFBEF04018F3304400006CFE /* Frameworks */,
+				FFBEF04118F3304400006CFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Veneficia;
+			productName = Veneficia;
+			productReference = FFBEF04318F3304400006CFE /* Veneficia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FFBEF06D18F3304400006CFE /* VeneficiaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFBEF08218F3304400006CFE /* Build configuration list for PBXNativeTarget "VeneficiaTests" */;
+			buildPhases = (
+				FFBEF06A18F3304400006CFE /* Sources */,
+				FFBEF06B18F3304400006CFE /* Frameworks */,
+				FFBEF06C18F3304400006CFE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FFBEF07418F3304400006CFE /* PBXTargetDependency */,
+			);
+			name = VeneficiaTests;
+			productName = VeneficiaTests;
+			productReference = FFBEF06E18F3304400006CFE /* VeneficiaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FFBEF03B18F3304400006CFE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Veneficia;
+				TargetAttributes = {
+					FFBEF06D18F3304400006CFE = {
+						TestTargetID = FFBEF04218F3304400006CFE;
+					};
+				};
+			};
+			buildConfigurationList = FFBEF03E18F3304400006CFE /* Build configuration list for PBXProject "Veneficia" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FFBEF03A18F3304400006CFE;
+			productRefGroup = FFBEF04418F3304400006CFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FFBEF04218F3304400006CFE /* Veneficia */,
+				FFBEF06D18F3304400006CFE /* VeneficiaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FFBEF04118F3304400006CFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBEF06718F3304400006CFE /* Spaceship.png in Resources */,
+				FFBEF06918F3304400006CFE /* Images.xcassets in Resources */,
+				FFBEF05F18F3304400006CFE /* Main_iPad.storyboard in Resources */,
+				FFBEF05C18F3304400006CFE /* Main_iPhone.storyboard in Resources */,
+				FFBEF05318F3304400006CFE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFBEF06C18F3304400006CFE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBEF07A18F3304400006CFE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FFBEF03F18F3304400006CFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBEF06518F3304400006CFE /* MyScene.m in Sources */,
+				FFBEF06218F3304400006CFE /* ViewController.m in Sources */,
+				FFBEF05918F3304400006CFE /* AppDelegate.m in Sources */,
+				FFBEF05518F3304400006CFE /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFBEF06A18F3304400006CFE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFBEF07C18F3304400006CFE /* VeneficiaTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FFBEF07418F3304400006CFE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FFBEF04218F3304400006CFE /* Veneficia */;
+			targetProxy = FFBEF07318F3304400006CFE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FFBEF05118F3304400006CFE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFBEF05218F3304400006CFE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FFBEF05A18F3304400006CFE /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFBEF05B18F3304400006CFE /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		FFBEF05D18F3304400006CFE /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFBEF05E18F3304400006CFE /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		FFBEF07818F3304400006CFE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FFBEF07918F3304400006CFE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FFBEF07D18F3304400006CFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FFBEF07E18F3304400006CFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FFBEF08018F3304400006CFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Veneficia/Veneficia-Prefix.pch";
+				INFOPLIST_FILE = "Veneficia/Veneficia-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FFBEF08118F3304400006CFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Veneficia/Veneficia-Prefix.pch";
+				INFOPLIST_FILE = "Veneficia/Veneficia-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FFBEF08318F3304400006CFE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Veneficia.app/Veneficia";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Veneficia/Veneficia-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "VeneficiaTests/VeneficiaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FFBEF08418F3304400006CFE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Veneficia.app/Veneficia";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Veneficia/Veneficia-Prefix.pch";
+				INFOPLIST_FILE = "VeneficiaTests/VeneficiaTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FFBEF03E18F3304400006CFE /* Build configuration list for PBXProject "Veneficia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFBEF07D18F3304400006CFE /* Debug */,
+				FFBEF07E18F3304400006CFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFBEF07F18F3304400006CFE /* Build configuration list for PBXNativeTarget "Veneficia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFBEF08018F3304400006CFE /* Debug */,
+				FFBEF08118F3304400006CFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FFBEF08218F3304400006CFE /* Build configuration list for PBXNativeTarget "VeneficiaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FFBEF08318F3304400006CFE /* Debug */,
+				FFBEF08418F3304400006CFE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FFBEF03B18F3304400006CFE /* Project object */;
+}
