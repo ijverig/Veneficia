@@ -16,15 +16,42 @@
 		FFBEF05918F3304400006CFE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF05818F3304400006CFE /* AppDelegate.m */; };
 		FFBEF05C18F3304400006CFE /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF05A18F3304400006CFE /* Main_iPhone.storyboard */; };
 		FFBEF05F18F3304400006CFE /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF05D18F3304400006CFE /* Main_iPad.storyboard */; };
-		FFBEF06218F3304400006CFE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF06118F3304400006CFE /* ViewController.m */; };
-		FFBEF06518F3304400006CFE /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF06418F3304400006CFE /* MyScene.m */; };
-		FFBEF06718F3304400006CFE /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF06618F3304400006CFE /* Spaceship.png */; };
 		FFBEF06918F3304400006CFE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF06818F3304400006CFE /* Images.xcassets */; };
 		FFBEF07018F3304400006CFE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF06F18F3304400006CFE /* XCTest.framework */; };
 		FFBEF07118F3304400006CFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04618F3304400006CFE /* Foundation.framework */; };
 		FFBEF07218F3304400006CFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04A18F3304400006CFE /* UIKit.framework */; };
 		FFBEF07A18F3304400006CFE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF07818F3304400006CFE /* InfoPlist.strings */; };
 		FFBEF07C18F3304400006CFE /* VeneficiaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF07B18F3304400006CFE /* VeneficiaTests.m */; };
+		FFBEF0AE18F3309A00006CFE /* megaMan.atlas in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08518F3309A00006CFE /* megaMan.atlas */; };
+		FFBEF0AF18F3309A00006CFE /* blackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08618F3309A00006CFE /* blackButton.png */; };
+		FFBEF0B018F3309A00006CFE /* fireSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08718F3309A00006CFE /* fireSymbol.png */; };
+		FFBEF0B118F3309A00006CFE /* glassButtonBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08818F3309A00006CFE /* glassButtonBlue.png */; };
+		FFBEF0B218F3309A00006CFE /* glassButtonGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08918F3309A00006CFE /* glassButtonGreen.png */; };
+		FFBEF0B318F3309A00006CFE /* isometric_grass_and_water.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08A18F3309A00006CFE /* isometric_grass_and_water.png */; };
+		FFBEF0B418F3309A00006CFE /* joy_thumb.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08B18F3309A00006CFE /* joy_thumb.png */; };
+		FFBEF0B518F3309A00006CFE /* joy_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08C18F3309A00006CFE /* joy_thumb@2x.png */; };
+		FFBEF0B618F3309A00006CFE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08D18F3309A00006CFE /* spark.png */; };
+		FFBEF0B718F3309A00006CFE /* stick_base.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08E18F3309A00006CFE /* stick_base.png */; };
+		FFBEF0B818F3309A00006CFE /* stick_hold.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08F18F3309A00006CFE /* stick_hold.png */; };
+		FFBEF0B918F3309A00006CFE /* terraSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF09018F3309A00006CFE /* terraSymbol.png */; };
+		FFBEF0BA18F3309A00006CFE /* map.bmp in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF09118F3309A00006CFE /* map.bmp */; };
+		FFBEF0BB18F3309A00006CFE /* trees.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF09218F3309A00006CFE /* trees.png */; };
+		FFBEF0BC18F3309A00006CFE /* waterSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF09318F3309A00006CFE /* waterSymbol.png */; };
+		FFBEF0BD18F3309A00006CFE /* Attack.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF09518F3309A00006CFE /* Attack.m */; };
+		FFBEF0BE18F3309A00006CFE /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF09718F3309A00006CFE /* Character.m */; };
+		FFBEF0BF18F3309A00006CFE /* FusionPower.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF09918F3309A00006CFE /* FusionPower.m */; };
+		FFBEF0C018F3309A00006CFE /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF09B18F3309A00006CFE /* GameScene.m */; };
+		FFBEF0C118F3309A00006CFE /* Joystick.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF09D18F3309A00006CFE /* Joystick.m */; };
+		FFBEF0C218F3309A00006CFE /* JSTileMap.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF09F18F3309A00006CFE /* JSTileMap.m */; };
+		FFBEF0C318F3309A00006CFE /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF0A118F3309A00006CFE /* LFCGzipUtility.m */; };
+		FFBEF0C418F3309A00006CFE /* MagicPower.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF0A318F3309A00006CFE /* MagicPower.m */; };
+		FFBEF0C518F3309A00006CFE /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF0A518F3309A00006CFE /* Player.m */; };
+		FFBEF0C718F3309A00006CFE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF0A918F3309A00006CFE /* ViewController.m */; };
+		FFBEF0C818F3309A00006CFE /* FireRay.sks in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF0AA18F3309A00006CFE /* FireRay.sks */; };
+		FFBEF0C918F3309A00006CFE /* isometric_grass_and_water.tmx in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF0AB18F3309A00006CFE /* isometric_grass_and_water.tmx */; };
+		FFBEF0CA18F3309A00006CFE /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF0AC18F3309A00006CFE /* map.tmx */; };
+		FFBEF0CB18F3309A00006CFE /* Water.sks in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF0AD18F3309A00006CFE /* Water.sks */; };
+		FFBEF0CD18F330FC00006CFE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF0CC18F330FC00006CFE /* libz.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,17 +78,52 @@
 		FFBEF05818F3304400006CFE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FFBEF05B18F3304400006CFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		FFBEF05E18F3304400006CFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		FFBEF06018F3304400006CFE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		FFBEF06118F3304400006CFE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FFBEF06318F3304400006CFE /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
-		FFBEF06418F3304400006CFE /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		FFBEF06618F3304400006CFE /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		FFBEF06818F3304400006CFE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FFBEF06E18F3304400006CFE /* VeneficiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VeneficiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBEF06F18F3304400006CFE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FFBEF07718F3304400006CFE /* VeneficiaTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VeneficiaTests-Info.plist"; sourceTree = "<group>"; };
 		FFBEF07918F3304400006CFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FFBEF07B18F3304400006CFE /* VeneficiaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VeneficiaTests.m; sourceTree = "<group>"; };
+		FFBEF08518F3309A00006CFE /* megaMan.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = megaMan.atlas; sourceTree = "<group>"; };
+		FFBEF08618F3309A00006CFE /* blackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackButton.png; sourceTree = "<group>"; };
+		FFBEF08718F3309A00006CFE /* fireSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireSymbol.png; sourceTree = "<group>"; };
+		FFBEF08818F3309A00006CFE /* glassButtonBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glassButtonBlue.png; sourceTree = "<group>"; };
+		FFBEF08918F3309A00006CFE /* glassButtonGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glassButtonGreen.png; sourceTree = "<group>"; };
+		FFBEF08A18F3309A00006CFE /* isometric_grass_and_water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = isometric_grass_and_water.png; sourceTree = "<group>"; };
+		FFBEF08B18F3309A00006CFE /* joy_thumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joy_thumb.png; sourceTree = "<group>"; };
+		FFBEF08C18F3309A00006CFE /* joy_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "joy_thumb@2x.png"; sourceTree = "<group>"; };
+		FFBEF08D18F3309A00006CFE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		FFBEF08E18F3309A00006CFE /* stick_base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick_base.png; sourceTree = "<group>"; };
+		FFBEF08F18F3309A00006CFE /* stick_hold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick_hold.png; sourceTree = "<group>"; };
+		FFBEF09018F3309A00006CFE /* terraSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terraSymbol.png; sourceTree = "<group>"; };
+		FFBEF09118F3309A00006CFE /* map.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = map.bmp; sourceTree = "<group>"; };
+		FFBEF09218F3309A00006CFE /* trees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trees.png; sourceTree = "<group>"; };
+		FFBEF09318F3309A00006CFE /* waterSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterSymbol.png; sourceTree = "<group>"; };
+		FFBEF09418F3309A00006CFE /* Attack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Attack.h; sourceTree = "<group>"; };
+		FFBEF09518F3309A00006CFE /* Attack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Attack.m; sourceTree = "<group>"; };
+		FFBEF09618F3309A00006CFE /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
+		FFBEF09718F3309A00006CFE /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Character.m; sourceTree = "<group>"; };
+		FFBEF09818F3309A00006CFE /* FusionPower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FusionPower.h; sourceTree = "<group>"; };
+		FFBEF09918F3309A00006CFE /* FusionPower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FusionPower.m; sourceTree = "<group>"; };
+		FFBEF09A18F3309A00006CFE /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		FFBEF09B18F3309A00006CFE /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
+		FFBEF09C18F3309A00006CFE /* Joystick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Joystick.h; sourceTree = "<group>"; };
+		FFBEF09D18F3309A00006CFE /* Joystick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Joystick.m; sourceTree = "<group>"; };
+		FFBEF09E18F3309A00006CFE /* JSTileMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSTileMap.h; sourceTree = "<group>"; };
+		FFBEF09F18F3309A00006CFE /* JSTileMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSTileMap.m; sourceTree = "<group>"; };
+		FFBEF0A018F3309A00006CFE /* LFCGzipUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCGzipUtility.h; sourceTree = "<group>"; };
+		FFBEF0A118F3309A00006CFE /* LFCGzipUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCGzipUtility.m; sourceTree = "<group>"; };
+		FFBEF0A218F3309A00006CFE /* MagicPower.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPower.h; sourceTree = "<group>"; };
+		FFBEF0A318F3309A00006CFE /* MagicPower.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicPower.m; sourceTree = "<group>"; };
+		FFBEF0A418F3309A00006CFE /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		FFBEF0A518F3309A00006CFE /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		FFBEF0A818F3309A00006CFE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		FFBEF0A918F3309A00006CFE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		FFBEF0AA18F3309A00006CFE /* FireRay.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireRay.sks; sourceTree = "<group>"; };
+		FFBEF0AB18F3309A00006CFE /* isometric_grass_and_water.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = isometric_grass_and_water.tmx; sourceTree = "<group>"; };
+		FFBEF0AC18F3309A00006CFE /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
+		FFBEF0AD18F3309A00006CFE /* Water.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Water.sks; sourceTree = "<group>"; };
+		FFBEF0CC18F330FC00006CFE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFBEF0CD18F330FC00006CFE /* libz.dylib in Frameworks */,
 				FFBEF04918F3304400006CFE /* CoreGraphics.framework in Frameworks */,
 				FFBEF04B18F3304400006CFE /* UIKit.framework in Frameworks */,
 				FFBEF04D18F3304400006CFE /* SpriteKit.framework in Frameworks */,
@@ -111,6 +174,7 @@
 		FFBEF04518F3304400006CFE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FFBEF0CC18F330FC00006CFE /* libz.dylib */,
 				FFBEF04618F3304400006CFE /* Foundation.framework */,
 				FFBEF04818F3304400006CFE /* CoreGraphics.framework */,
 				FFBEF04A18F3304400006CFE /* UIKit.framework */,
@@ -123,15 +187,27 @@
 		FFBEF04E18F3304400006CFE /* Veneficia */ = {
 			isa = PBXGroup;
 			children = (
-				FFBEF05718F3304400006CFE /* AppDelegate.h */,
-				FFBEF05818F3304400006CFE /* AppDelegate.m */,
+				FFBEF09618F3309A00006CFE /* Character.h */,
+				FFBEF09718F3309A00006CFE /* Character.m */,
+				FFBEF0A418F3309A00006CFE /* Player.h */,
+				FFBEF0A518F3309A00006CFE /* Player.m */,
+				FFBEF0A218F3309A00006CFE /* MagicPower.h */,
+				FFBEF0A318F3309A00006CFE /* MagicPower.m */,
+				FFBEF09818F3309A00006CFE /* FusionPower.h */,
+				FFBEF09918F3309A00006CFE /* FusionPower.m */,
+				FFBEF09418F3309A00006CFE /* Attack.h */,
+				FFBEF09518F3309A00006CFE /* Attack.m */,
+				FFBEF0CF18F4613500006CFE /* Spells */,
+				FFBEF0D018F461B100006CFE /* Controllers */,
+				FFBEF0D118F461CA00006CFE /* Scenes */,
+				FFBEF0CE18F3323C00006CFE /* Tile Map */,
+				FFBEF0D218F461EE00006CFE /* Images */,
 				FFBEF05A18F3304400006CFE /* Main_iPhone.storyboard */,
 				FFBEF05D18F3304400006CFE /* Main_iPad.storyboard */,
-				FFBEF06018F3304400006CFE /* ViewController.h */,
-				FFBEF06118F3304400006CFE /* ViewController.m */,
-				FFBEF06318F3304400006CFE /* MyScene.h */,
-				FFBEF06418F3304400006CFE /* MyScene.m */,
-				FFBEF06618F3304400006CFE /* Spaceship.png */,
+				FFBEF05718F3304400006CFE /* AppDelegate.h */,
+				FFBEF05818F3304400006CFE /* AppDelegate.m */,
+				FFBEF0A818F3309A00006CFE /* ViewController.h */,
+				FFBEF0A918F3309A00006CFE /* ViewController.m */,
 				FFBEF06818F3304400006CFE /* Images.xcassets */,
 				FFBEF04F18F3304400006CFE /* Supporting Files */,
 			);
@@ -165,6 +241,68 @@
 				FFBEF07818F3304400006CFE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FFBEF0CE18F3323C00006CFE /* Tile Map */ = {
+			isa = PBXGroup;
+			children = (
+				FFBEF09E18F3309A00006CFE /* JSTileMap.h */,
+				FFBEF09F18F3309A00006CFE /* JSTileMap.m */,
+				FFBEF0A018F3309A00006CFE /* LFCGzipUtility.h */,
+				FFBEF0A118F3309A00006CFE /* LFCGzipUtility.m */,
+				FFBEF0AC18F3309A00006CFE /* map.tmx */,
+				FFBEF09218F3309A00006CFE /* trees.png */,
+				FFBEF09118F3309A00006CFE /* map.bmp */,
+				FFBEF08A18F3309A00006CFE /* isometric_grass_and_water.png */,
+				FFBEF0AB18F3309A00006CFE /* isometric_grass_and_water.tmx */,
+			);
+			name = "Tile Map";
+			sourceTree = "<group>";
+		};
+		FFBEF0CF18F4613500006CFE /* Spells */ = {
+			isa = PBXGroup;
+			children = (
+				FFBEF0AA18F3309A00006CFE /* FireRay.sks */,
+				FFBEF0AD18F3309A00006CFE /* Water.sks */,
+				FFBEF08D18F3309A00006CFE /* spark.png */,
+			);
+			name = Spells;
+			sourceTree = "<group>";
+		};
+		FFBEF0D018F461B100006CFE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FFBEF09C18F3309A00006CFE /* Joystick.h */,
+				FFBEF09D18F3309A00006CFE /* Joystick.m */,
+				FFBEF08B18F3309A00006CFE /* joy_thumb.png */,
+				FFBEF08C18F3309A00006CFE /* joy_thumb@2x.png */,
+				FFBEF08E18F3309A00006CFE /* stick_base.png */,
+				FFBEF08F18F3309A00006CFE /* stick_hold.png */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		FFBEF0D118F461CA00006CFE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				FFBEF09A18F3309A00006CFE /* GameScene.h */,
+				FFBEF09B18F3309A00006CFE /* GameScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		FFBEF0D218F461EE00006CFE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FFBEF08518F3309A00006CFE /* megaMan.atlas */,
+				FFBEF08618F3309A00006CFE /* blackButton.png */,
+				FFBEF08718F3309A00006CFE /* fireSymbol.png */,
+				FFBEF08818F3309A00006CFE /* glassButtonBlue.png */,
+				FFBEF08918F3309A00006CFE /* glassButtonGreen.png */,
+				FFBEF09018F3309A00006CFE /* terraSymbol.png */,
+				FFBEF09318F3309A00006CFE /* waterSymbol.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,11 +381,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFBEF06718F3304400006CFE /* Spaceship.png in Resources */,
+				FFBEF0B218F3309A00006CFE /* glassButtonGreen.png in Resources */,
+				FFBEF0AE18F3309A00006CFE /* megaMan.atlas in Resources */,
+				FFBEF0B118F3309A00006CFE /* glassButtonBlue.png in Resources */,
+				FFBEF0CB18F3309A00006CFE /* Water.sks in Resources */,
+				FFBEF0BB18F3309A00006CFE /* trees.png in Resources */,
+				FFBEF0B618F3309A00006CFE /* spark.png in Resources */,
+				FFBEF0B818F3309A00006CFE /* stick_hold.png in Resources */,
+				FFBEF0AF18F3309A00006CFE /* blackButton.png in Resources */,
+				FFBEF0B418F3309A00006CFE /* joy_thumb.png in Resources */,
 				FFBEF06918F3304400006CFE /* Images.xcassets in Resources */,
 				FFBEF05F18F3304400006CFE /* Main_iPad.storyboard in Resources */,
+				FFBEF0B318F3309A00006CFE /* isometric_grass_and_water.png in Resources */,
+				FFBEF0CA18F3309A00006CFE /* map.tmx in Resources */,
+				FFBEF0B018F3309A00006CFE /* fireSymbol.png in Resources */,
+				FFBEF0B718F3309A00006CFE /* stick_base.png in Resources */,
 				FFBEF05C18F3304400006CFE /* Main_iPhone.storyboard in Resources */,
+				FFBEF0BC18F3309A00006CFE /* waterSymbol.png in Resources */,
+				FFBEF0C818F3309A00006CFE /* FireRay.sks in Resources */,
+				FFBEF0B918F3309A00006CFE /* terraSymbol.png in Resources */,
+				FFBEF0C918F3309A00006CFE /* isometric_grass_and_water.tmx in Resources */,
 				FFBEF05318F3304400006CFE /* InfoPlist.strings in Resources */,
+				FFBEF0B518F3309A00006CFE /* joy_thumb@2x.png in Resources */,
+				FFBEF0BA18F3309A00006CFE /* map.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,10 +422,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFBEF06518F3304400006CFE /* MyScene.m in Sources */,
-				FFBEF06218F3304400006CFE /* ViewController.m in Sources */,
+				FFBEF0C218F3309A00006CFE /* JSTileMap.m in Sources */,
+				FFBEF0BD18F3309A00006CFE /* Attack.m in Sources */,
+				FFBEF0C518F3309A00006CFE /* Player.m in Sources */,
+				FFBEF0C318F3309A00006CFE /* LFCGzipUtility.m in Sources */,
 				FFBEF05918F3304400006CFE /* AppDelegate.m in Sources */,
+				FFBEF0BF18F3309A00006CFE /* FusionPower.m in Sources */,
+				FFBEF0C718F3309A00006CFE /* ViewController.m in Sources */,
 				FFBEF05518F3304400006CFE /* main.m in Sources */,
+				FFBEF0C018F3309A00006CFE /* GameScene.m in Sources */,
+				FFBEF0C418F3309A00006CFE /* MagicPower.m in Sources */,
+				FFBEF0C118F3309A00006CFE /* Joystick.m in Sources */,
+				FFBEF0BE18F3309A00006CFE /* Character.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
