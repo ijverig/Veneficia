@@ -61,8 +61,8 @@
 
 -(void) incializeCharTextures
 {
-    NSPredicate *predicateUP = [NSPredicate predicateWithFormat:@" SELF Like[c] 'BACK*' "]; // change to UP after
-    NSPredicate *predicateDOWN = [NSPredicate predicateWithFormat:@" SELF Like[c] 'FRONT*' "]; // change to DOWN after
+    NSPredicate *predicateUP = [NSPredicate predicateWithFormat:@" SELF Like[c] 'UP*' "]; // change to UP after
+    NSPredicate *predicateDOWN = [NSPredicate predicateWithFormat:@" SELF Like[c] 'DOWN*' "]; // change to DOWN after
     NSPredicate *predicateLEFT = [NSPredicate predicateWithFormat:@" SELF Like[c] 'LEFT*' "];
     NSPredicate *predicateRIGHT = [NSPredicate predicateWithFormat:@" SELF Like[c] 'RIGHT*' "];
     NSPredicate *predicateUP_RIGHT = [NSPredicate predicateWithFormat:@" SELF Like[c] 'UP_RIGHT*' "];

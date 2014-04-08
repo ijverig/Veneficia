@@ -1,6 +1,6 @@
 //
 //  MegaMan.m
-//  Veneficia
+//  Veneficus
 //
 //  Created by Rodrigo Freitas Leite on 29/03/14.
 //  Copyright (c) 2014 Frelei. All rights reserved.
@@ -30,14 +30,14 @@
     if (self)
     {
         self.texture =   [self.textureDOWN firstObject];
-        self.actionUP = [SKAction animateWithTextures:self.textureUP timePerFrame:0.06];
-        self.actionDOWN = [SKAction animateWithTextures:self.textureDOWN timePerFrame:0.06];
-        self.actionLEFT = [SKAction animateWithTextures:self.textureLEFT timePerFrame:0.06];
-        self.actionRIGHT = [SKAction animateWithTextures:self.textureRIGHT timePerFrame:0.06];
-        self.actionUP_LEFT = [SKAction animateWithTextures:self.textureUP_LEFT timePerFrame:0.06];
-        self.actionUP_RIGHT = [SKAction animateWithTextures:self.textureUP_RIGHT timePerFrame:0.06];
-        self.actionDOWN_LEFT = [SKAction animateWithTextures:self.textureDOWN_LEFT timePerFrame:0.06];
-        self.actionDOWN_RIGHT = [SKAction animateWithTextures:self.textureDOWN_RIGHT timePerFrame:0.06];
+        self.actionUP = [SKAction animateWithTextures:self.textureUP timePerFrame:0.1];
+        self.actionDOWN = [SKAction animateWithTextures:self.textureDOWN timePerFrame:0.1];
+        self.actionLEFT = [SKAction animateWithTextures:self.textureLEFT timePerFrame:0.1];
+        self.actionRIGHT = [SKAction animateWithTextures:self.textureRIGHT timePerFrame:0.1];
+        self.actionUP_LEFT = [SKAction animateWithTextures:self.textureUP_LEFT timePerFrame:0.1];
+        self.actionUP_RIGHT = [SKAction animateWithTextures:self.textureUP_RIGHT timePerFrame:0.1];
+        self.actionDOWN_LEFT = [SKAction animateWithTextures:self.textureDOWN_LEFT timePerFrame:0.1];
+        self.actionDOWN_RIGHT = [SKAction animateWithTextures:self.textureDOWN_RIGHT timePerFrame:0.1];
         
     }
     return self;
@@ -46,14 +46,18 @@
 
 #pragma mark Directions
 
+//     PARAMETER FLOAT INCLUDE IN THE DIRECTION METHODS
 -(void) Left
 {
     float newLeft = self.position.x - self.velocity;
     if (![self hasActions])
     {
-        [self runAction:[SKAction group:@[ self.actionLEFT, [SKAction moveToX:newLeft duration:0.01] ]]];
+        //[self runAction:[SKAction group:@[ self.actionLEFT, [SKAction moveToX:newLeft duration:0.01] ]]];
+        [self runAction:[SKAction sequence:@[self.actionLEFT]]];
         self.direction = LEFT;
     }
+    [self setPosition:CGPointMake(newLeft, self.position.y)];
+
 }
 
 -(void) Right
@@ -61,9 +65,11 @@
     float newRight = self.position.x + self.velocity;
     if (![self hasActions])
     {
-        [self runAction:[SKAction group:@[ self.actionRIGHT, [SKAction moveToX:newRight duration:0.01] ]]];
+        [self runAction:[SKAction sequence:@[self.actionRIGHT]]];
         self.direction = RIGHT;
     }
+    [self setPosition:CGPointMake(newRight, self.position.y)];
+
 }
 
 -(void) Up
@@ -71,9 +77,11 @@
     float newY = self.position.y + self.velocity;
     if (![self hasActions])
     {
-        [self runAction:[SKAction group:@[self.actionUP, [SKAction moveToY:newY duration:0.1]]]];
+        [self runAction:[SKAction sequence:@[self.actionUP]]];
         self.direction = UP;
     }
+    [self setPosition:CGPointMake(self.position.x, newY)];
+
 }
 
 -(void) Down
@@ -81,9 +89,11 @@
     float newY  = self.position.y - self.velocity;
     if (![self hasActions])
     {
-        [self runAction:[SKAction group:@[self.actionDOWN, [SKAction moveToY:newY duration:0.1]]]];
+        [self runAction:[SKAction sequence:@[self.actionDOWN]]];
         self.direction = DOWN;
     }
+    [self setPosition:CGPointMake(self.position.x, newY)];
+
 }
 
 

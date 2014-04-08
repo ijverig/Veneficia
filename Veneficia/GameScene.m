@@ -1,6 +1,6 @@
 //
 //  GameScene.m
-//  Veneficia
+//  Veneficus
 //
 //  Created by Rodrigo Freitas Leite on 28/03/14.
 //  Copyright (c) 2014 Frelei. All rights reserved.
@@ -17,7 +17,7 @@
 
 @property(nonatomic) Joystick *joystick;
 @property(nonatomic) SKEmitterNode *emmiter;
-@property(nonatomic) Player *megaman;
+@property(nonatomic) Player *redWarrior;
 @property(nonatomic) Player *enemy;
 @property(nonatomic) Attack *factoryAttack;
 
@@ -40,7 +40,7 @@
         
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
         NSLog(@"Point: %@", NSStringFromCGPoint(self.anchorPoint));
-//        TILE MAP
+        // TILE MAP
 //        JSTileMap* tiledMap = [JSTileMap mapNamed:@"isometric_grass_and_water.tmx"];
         self.map = [JSTileMap mapNamed:@"map.tmx"];
 
@@ -87,18 +87,18 @@
         self.joystick.delegate = self;
 
         // Player inicial
-        self.megaman = [[Player alloc] initWithPosition:CGPointMake(size.width, size.height)
-                                              direction:DOWN
-                                                   life:1000
-                                               velocity:50
-                                                 attack:1000
-                                                defense:1000
-                                              atlasName:@"megaMan"];
-        self.megaman.name = @"Mega-man";
-        self.megaman.size = CGSizeMake(60, 60);
-        [self.map addChild:self.megaman];
-        
-        // Player Enemy
+//        self.megaman = [[Player alloc] initWithPosition:CGPointMake(size.width, size.height)
+//                                              direction:DOWN
+//                                                   life:1000
+//                                               velocity:50
+//                                                 attack:1000
+//                                                defense:1000
+//                                              atlasName:@"megaMan"];
+//        self.megaman.name = @"Mega-man";
+//        self.megaman.size = CGSizeMake(60, 60);
+//        [self.map addChild:self.megaman];
+//        
+//        // Player Enemy
         self.enemy = [[Player alloc] initWithPosition:CGPointMake(size.width +100, size.height +100)
                                             direction:DOWN
                                                  life:1000
@@ -110,10 +110,20 @@
         self.enemy.size = CGSizeMake(60, 60);
         [self.map addChild:self.enemy];
         
+        // RED Player
+        self.redWarrior = [[Player alloc] initWithPosition:CGPointMake(size.width, size.height)
+                                                 direction:DOWN
+                                                      life:1000
+                                                  velocity:10
+                                                    attack:10
+                                                   defense:1000 atlasName:@"RED_WARRIOR"];
+        self.redWarrior.name = @"RED_WARRIOR";
+        self.redWarrior.size = CGSizeMake(100, 100);
+        [self.map addChild:self.redWarrior];
+        
         //Factory of Spells
         self.factoryAttack = [Attack shareAttackInstance];
-        
-        
+    
         //Fusion of Powers
         self.fusionPower = [[FusionPower alloc] initWithSizeofScreen:size andMap:self];
     }
@@ -135,23 +145,23 @@
         NSString *fireRayPath = [[NSBundle mainBundle] pathForResource:@"FireRay" ofType:@"sks"];
 		self.emmiter = [NSKeyedUnarchiver unarchiveObjectWithFile:fireRayPath];
 
-        self.emmiter.particlePosition = self.megaman.position;
+        self.emmiter.particlePosition = self.redWarrior.position;
         [self.map addChild:self.emmiter];
-        if (self.megaman.direction == LEFT){
+        if (self.redWarrior.direction == LEFT){
             self.emmiter.emissionAngle = 0;
             [self.emmiter runAction:[SKAction sequence:@[ [SKAction moveToX:-self.view.bounds.size.width duration:1.0],
                                                           [SKAction removeFromParent]]]];
         }
-        if (self.megaman.direction == RIGHT){
+        if (self.redWarrior.direction == RIGHT){
             [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:self.view.bounds.size.width duration:1.0],
                                                          [SKAction removeFromParent]]]];
         }
-        if(self.megaman.direction == UP){
+        if(self.redWarrior.direction == UP){
           self.emmiter.emissionAngle = -M_PI/2;
             [self.emmiter runAction:[SKAction sequence:@[ [SKAction moveToY:self.view.bounds.size.width duration:1.0],
                                                           [SKAction removeFromParent]]]];
         }
-        if (self.megaman.direction == DOWN){
+        if (self.redWarrior.direction == DOWN){
             self.emmiter.emissionAngle = M_PI/2;
             [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:-self.view.bounds.size.width duration:1.0],
                                                          [SKAction removeFromParent]]]];
@@ -163,18 +173,18 @@
     {
         NSString *WaterRay = [[NSBundle mainBundle] pathForResource:@"Water" ofType:@"sks"];
 		self.emmiter = [NSKeyedUnarchiver unarchiveObjectWithFile:WaterRay];
-        self.emmiter.particlePosition = self.megaman.position;
+        self.emmiter.particlePosition = self.redWarrior.position;
         [self.map addChild:self.emmiter];
-        if (self.megaman.direction == LEFT){
+        if (self.redWarrior.direction == LEFT){
             [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:-self.view.bounds.size.width duration:1.0], [SKAction removeFromParent]]]];
         }
-        if (self.megaman.direction == RIGHT){
+        if (self.redWarrior.direction == RIGHT){
             [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:self.view.bounds.size.width duration:1.0], [SKAction removeFromParent]]]];
         }
-        if (self.megaman.direction == UP){
+        if (self.redWarrior.direction == UP){
             [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:self.view.bounds.size.width duration:1.0], [SKAction removeFromParent]]]];
         }
-        if (self.megaman.direction == DOWN){
+        if (self.redWarrior.direction == DOWN){
             [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:-self.view.bounds.size.width duration:1.0], [SKAction removeFromParent]]]];
         }
     
@@ -232,25 +242,25 @@
 - (void)joystick:(Joystick *)aJoystick didUpdate:(CGPoint)dir
 {    
     if (dir.x> 0.5) {
-    //    NSLog(@"Right");
-        [self.megaman Right];
+        NSLog(@"Right");
+        [self.redWarrior Right];
     }
     
     if (dir.x < -0.5) {
    //     NSLog(@"Left");
 
-        [self.megaman Left];
+        [self.redWarrior Left];
     }
     
     if (dir.y > 0.5) {
     //    NSLog(@"Down");
-        [self.megaman Down];
+        [self.redWarrior Down];
 
     }
     
     if (dir.y < -0.5) {
        // NSLog(@"Top");
-        [self.megaman Up];
+        [self.redWarrior Up];
 
     }
     
@@ -269,7 +279,7 @@
 
 -(void)update:(NSTimeInterval)currentTime
 {
-    [self centerOnNode:self.megaman];
+    [self centerOnNode:self.redWarrior];
     [self dummyEnemy];
     
 }
@@ -277,12 +287,7 @@
 -(void) dummyEnemy
 {
     int rand = arc4random_uniform(4);
-//    count++;
-//    if (count == 100){
-//        count = 0;
-//        return;
-//    }
-    
+
     switch (rand) {
         case 0:
         {
@@ -291,8 +296,6 @@
                 MagicPower *power = (MagicPower*) [self.factoryAttack createWaterAttackBy:self.enemy];
                 [self.map addChild:(SKNode*)power];
             }
-           
-            
         }
             break;
         case 1:
@@ -302,8 +305,7 @@
             break;
         case 2:
             [self.enemy Up];
-            
-            
+        
             break;
         case 3:
             [self.enemy Down];
