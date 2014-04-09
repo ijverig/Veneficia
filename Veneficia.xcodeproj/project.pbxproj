@@ -14,6 +14,10 @@
 		5B7D5ACF18F486DB00A50B00 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D5ACE18F486DB00A50B00 /* Player.m */; };
 		5B7D5AD118F486F500A50B00 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D5AD018F486F500A50B00 /* GameScene.m */; };
 		5B7D5AD318F488AA00A50B00 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B7D5AD218F488AA00A50B00 /* QuartzCore.framework */; };
+		5BF2C93018F5BADD0005C38C /* menuFundo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5BF2C92F18F5BADD0005C38C /* menuFundo.png */; };
+		5BF2C93718F5BAF10005C38C /* MenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2C93218F5BAF10005C38C /* MenuSegue.m */; };
+		5BF2C93818F5BAF10005C38C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2C93418F5BAF10005C38C /* MenuViewController.m */; };
+		5BF2C93918F5BAF10005C38C /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2C93618F5BAF10005C38C /* NavViewController.m */; };
 		FFBEF04718F3304400006CFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04618F3304400006CFE /* Foundation.framework */; };
 		FFBEF04918F3304400006CFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04818F3304400006CFE /* CoreGraphics.framework */; };
 		FFBEF04B18F3304400006CFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04A18F3304400006CFE /* UIKit.framework */; };
@@ -76,6 +80,13 @@
 		5B7D5ACE18F486DB00A50B00 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		5B7D5AD018F486F500A50B00 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		5B7D5AD218F488AA00A50B00 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5BF2C92F18F5BADD0005C38C /* menuFundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuFundo.png; sourceTree = "<group>"; };
+		5BF2C93118F5BAF10005C38C /* MenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuSegue.h; sourceTree = "<group>"; };
+		5BF2C93218F5BAF10005C38C /* MenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSegue.m; sourceTree = "<group>"; };
+		5BF2C93318F5BAF10005C38C /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		5BF2C93418F5BAF10005C38C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		5BF2C93518F5BAF10005C38C /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
+		5BF2C93618F5BAF10005C38C /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
 		FFBEF04318F3304400006CFE /* Veneficia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Veneficia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBEF04618F3304400006CFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FFBEF04818F3304400006CFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -222,6 +233,13 @@
 				FFBEF0D218F461EE00006CFE /* Images */,
 				FFBEF05A18F3304400006CFE /* Main_iPhone.storyboard */,
 				FFBEF05D18F3304400006CFE /* Main_iPad.storyboard */,
+				5BF2C93118F5BAF10005C38C /* MenuSegue.h */,
+				5BF2C93218F5BAF10005C38C /* MenuSegue.m */,
+				5BF2C93318F5BAF10005C38C /* MenuViewController.h */,
+				5BF2C93418F5BAF10005C38C /* MenuViewController.m */,
+				5BF2C93518F5BAF10005C38C /* NavViewController.h */,
+				5BF2C93618F5BAF10005C38C /* NavViewController.m */,
+				5BF2C92F18F5BADD0005C38C /* menuFundo.png */,
 				FFBEF05718F3304400006CFE /* AppDelegate.h */,
 				FFBEF05818F3304400006CFE /* AppDelegate.m */,
 				FFBEF0A818F3309A00006CFE /* ViewController.h */,
@@ -427,6 +445,7 @@
 				FFBEF05318F3304400006CFE /* InfoPlist.strings in Resources */,
 				FFBEF0B518F3309A00006CFE /* joy_thumb@2x.png in Resources */,
 				5B7D5ACA18F4869300A50B00 /* bird.atlas in Resources */,
+				5BF2C93018F5BADD0005C38C /* menuFundo.png in Resources */,
 				FFBEF0BA18F3309A00006CFE /* map.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,7 +467,9 @@
 			files = (
 				FFBEF0C218F3309A00006CFE /* JSTileMap.m in Sources */,
 				FFBEF0BD18F3309A00006CFE /* Attack.m in Sources */,
+				5BF2C93718F5BAF10005C38C /* MenuSegue.m in Sources */,
 				FFBEF0C318F3309A00006CFE /* LFCGzipUtility.m in Sources */,
+				5BF2C93918F5BAF10005C38C /* NavViewController.m in Sources */,
 				FFBEF05918F3304400006CFE /* AppDelegate.m in Sources */,
 				5B7D5ACF18F486DB00A50B00 /* Player.m in Sources */,
 				FFBEF0BF18F3309A00006CFE /* FusionPower.m in Sources */,
@@ -456,6 +477,7 @@
 				FFBEF05518F3304400006CFE /* main.m in Sources */,
 				FFBEF0C418F3309A00006CFE /* MagicPower.m in Sources */,
 				FFBEF0C118F3309A00006CFE /* Joystick.m in Sources */,
+				5BF2C93818F5BAF10005C38C /* MenuViewController.m in Sources */,
 				5B7D5AD118F486F500A50B00 /* GameScene.m in Sources */,
 				FFBEF0BE18F3309A00006CFE /* Character.m in Sources */,
 			);
