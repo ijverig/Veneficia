@@ -164,13 +164,6 @@
 		35A3ABC718F46D2400E159C8 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				35A3ABC818F46D5B00E159C8 /* MenuViewController.h */,
-				35A3ABC918F46D5B00E159C8 /* MenuViewController.m */,
-				35A3ABCB18F46DDF00E159C8 /* MenuSegue.h */,
-				35A3ABCC18F46DDF00E159C8 /* MenuSegue.m */,
-				35A3ABD018F47AB300E159C8 /* menuFundo.png */,
-				356D88D218F5AA3000452B40 /* NavViewController.h */,
-				356D88D318F5AA3000452B40 /* NavViewController.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -421,7 +414,6 @@
 				FFBEF0B418F3309A00006CFE /* joy_thumb.png in Resources */,
 				FFBEF06918F3304400006CFE /* Images.xcassets in Resources */,
 				FFBEF05F18F3304400006CFE /* Main_iPad.storyboard in Resources */,
-				35A3ABD118F47AB300E159C8 /* menuFundo.png in Resources */,
 				FFBEF0B318F3309A00006CFE /* isometric_grass_and_water.png in Resources */,
 				FFBEF0CA18F3309A00006CFE /* map.tmx in Resources */,
 				5B7D5ACB18F4869300A50B00 /* redWarrior.atlas in Resources */,
@@ -457,9 +449,6 @@
 				FFBEF0C218F3309A00006CFE /* JSTileMap.m in Sources */,
 				FFBEF0BD18F3309A00006CFE /* Attack.m in Sources */,
 				FFBEF0C318F3309A00006CFE /* LFCGzipUtility.m in Sources */,
-				356D88D418F5AA3000452B40 /* NavViewController.m in Sources */,
-				35A3ABCD18F46DDF00E159C8 /* MenuSegue.m in Sources */,
-				35A3ABCA18F46D5B00E159C8 /* MenuViewController.m in Sources */,
 				FFBEF05918F3304400006CFE /* AppDelegate.m in Sources */,
 				5B7D5ACF18F486DB00A50B00 /* Player.m in Sources */,
 				FFBEF0BF18F3309A00006CFE /* FusionPower.m in Sources */,
