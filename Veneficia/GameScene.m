@@ -86,7 +86,7 @@
                                                       life:1000
                                                   velocity:10
                                                     attack:10
-                                                   defense:1000 atlasName:@"RED_WARRIOR"];
+                                                   defense:1000 atlasName:@"redWarrior"];
         self.redWarrior.name = @"RED_WARRIOR";
         self.redWarrior.size = CGSizeMake(100, 100);
         [self.map addChild:self.redWarrior];

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B7D5ACA18F4869300A50B00 /* BIRD.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC618F4869300A50B00 /* BIRD.atlas */; };
-		5B7D5ACB18F4869300A50B00 /* RED_WARRIOR.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC718F4869300A50B00 /* RED_WARRIOR.atlas */; };
-		5B7D5ACC18F4869300A50B00 /* SWORD_WARRIOR.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC818F4869300A50B00 /* SWORD_WARRIOR.atlas */; };
+		5B7D5ACA18F4869300A50B00 /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC618F4869300A50B00 /* bird.atlas */; };
+		5B7D5ACB18F4869300A50B00 /* redWarrior.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC718F4869300A50B00 /* redWarrior.atlas */; };
+		5B7D5ACC18F4869300A50B00 /* swordWarrior.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC818F4869300A50B00 /* swordWarrior.atlas */; };
 		5B7D5ACD18F4869300A50B00 /* megaMan.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC918F4869300A50B00 /* megaMan.atlas */; };
 		5B7D5ACF18F486DB00A50B00 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D5ACE18F486DB00A50B00 /* Player.m */; };
 		5B7D5AD118F486F500A50B00 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B7D5AD018F486F500A50B00 /* GameScene.m */; };
@@ -69,9 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5B7D5AC618F4869300A50B00 /* BIRD.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = BIRD.atlas; sourceTree = "<group>"; };
-		5B7D5AC718F4869300A50B00 /* RED_WARRIOR.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = RED_WARRIOR.atlas; sourceTree = "<group>"; };
-		5B7D5AC818F4869300A50B00 /* SWORD_WARRIOR.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = SWORD_WARRIOR.atlas; sourceTree = "<group>"; };
+		5B7D5AC618F4869300A50B00 /* bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bird.atlas; sourceTree = "<group>"; };
+		5B7D5AC718F4869300A50B00 /* redWarrior.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = redWarrior.atlas; sourceTree = "<group>"; };
+		5B7D5AC818F4869300A50B00 /* swordWarrior.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = swordWarrior.atlas; sourceTree = "<group>"; };
 		5B7D5AC918F4869300A50B00 /* megaMan.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = megaMan.atlas; sourceTree = "<group>"; };
 		5B7D5ACE18F486DB00A50B00 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 		5B7D5AD018F486F500A50B00 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
@@ -304,9 +304,9 @@
 		FFBEF0D218F461EE00006CFE /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				5B7D5AC618F4869300A50B00 /* BIRD.atlas */,
-				5B7D5AC718F4869300A50B00 /* RED_WARRIOR.atlas */,
-				5B7D5AC818F4869300A50B00 /* SWORD_WARRIOR.atlas */,
+				5B7D5AC618F4869300A50B00 /* bird.atlas */,
+				5B7D5AC718F4869300A50B00 /* redWarrior.atlas */,
+				5B7D5AC818F4869300A50B00 /* swordWarrior.atlas */,
 				5B7D5AC918F4869300A50B00 /* megaMan.atlas */,
 				FFBEF08618F3309A00006CFE /* blackButton.png */,
 				FFBEF08818F3309A00006CFE /* glassButtonBlue.png */,
@@ -397,7 +397,7 @@
 				FFBEF0B218F3309A00006CFE /* glassButtonGreen.png in Resources */,
 				FFBEF0B118F3309A00006CFE /* glassButtonBlue.png in Resources */,
 				FFBEF0CB18F3309A00006CFE /* Water.sks in Resources */,
-				5B7D5ACC18F4869300A50B00 /* SWORD_WARRIOR.atlas in Resources */,
+				5B7D5ACC18F4869300A50B00 /* swordWarrior.atlas in Resources */,
 				5B7D5ACD18F4869300A50B00 /* megaMan.atlas in Resources */,
 				FFBEF0BB18F3309A00006CFE /* trees.png in Resources */,
 				FFBEF0B618F3309A00006CFE /* spark.png in Resources */,
@@ -408,7 +408,7 @@
 				FFBEF05F18F3304400006CFE /* Main_iPad.storyboard in Resources */,
 				FFBEF0B318F3309A00006CFE /* isometric_grass_and_water.png in Resources */,
 				FFBEF0CA18F3309A00006CFE /* map.tmx in Resources */,
-				5B7D5ACB18F4869300A50B00 /* RED_WARRIOR.atlas in Resources */,
+				5B7D5ACB18F4869300A50B00 /* redWarrior.atlas in Resources */,
 				FFBEF0B018F3309A00006CFE /* fireSymbol.png in Resources */,
 				FFBEF0B718F3309A00006CFE /* stick_base.png in Resources */,
 				FFBEF05C18F3304400006CFE /* Main_iPhone.storyboard in Resources */,
@@ -418,7 +418,7 @@
 				FFBEF0C918F3309A00006CFE /* isometric_grass_and_water.tmx in Resources */,
 				FFBEF05318F3304400006CFE /* InfoPlist.strings in Resources */,
 				FFBEF0B518F3309A00006CFE /* joy_thumb@2x.png in Resources */,
-				5B7D5ACA18F4869300A50B00 /* BIRD.atlas in Resources */,
+				5B7D5ACA18F4869300A50B00 /* bird.atlas in Resources */,
 				FFBEF0BA18F3309A00006CFE /* map.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
