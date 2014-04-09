@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		356D88D418F5AA3000452B40 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 356D88D318F5AA3000452B40 /* NavViewController.m */; };
+		35A3ABCA18F46D5B00E159C8 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A3ABC918F46D5B00E159C8 /* MenuViewController.m */; };
+		35A3ABCD18F46DDF00E159C8 /* MenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 35A3ABCC18F46DDF00E159C8 /* MenuSegue.m */; };
+		35A3ABD118F47AB300E159C8 /* menuFundo.png in Resources */ = {isa = PBXBuildFile; fileRef = 35A3ABD018F47AB300E159C8 /* menuFundo.png */; };
 		FFBEF04718F3304400006CFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04618F3304400006CFE /* Foundation.framework */; };
 		FFBEF04918F3304400006CFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04818F3304400006CFE /* CoreGraphics.framework */; };
 		FFBEF04B18F3304400006CFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04A18F3304400006CFE /* UIKit.framework */; };
@@ -65,6 +69,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		356D88D218F5AA3000452B40 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
+		356D88D318F5AA3000452B40 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
+		35A3ABC818F46D5B00E159C8 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		35A3ABC918F46D5B00E159C8 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		35A3ABCB18F46DDF00E159C8 /* MenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuSegue.h; sourceTree = "<group>"; };
+		35A3ABCC18F46DDF00E159C8 /* MenuSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuSegue.m; sourceTree = "<group>"; };
+		35A3ABD018F47AB300E159C8 /* menuFundo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menuFundo.png; sourceTree = "<group>"; };
 		FFBEF04318F3304400006CFE /* Veneficia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Veneficia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBEF04618F3304400006CFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FFBEF04818F3304400006CFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -152,6 +163,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35A3ABC718F46D2400E159C8 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				35A3ABC818F46D5B00E159C8 /* MenuViewController.h */,
+				35A3ABC918F46D5B00E159C8 /* MenuViewController.m */,
+				35A3ABCB18F46DDF00E159C8 /* MenuSegue.h */,
+				35A3ABCC18F46DDF00E159C8 /* MenuSegue.m */,
+				35A3ABD018F47AB300E159C8 /* menuFundo.png */,
+				356D88D218F5AA3000452B40 /* NavViewController.h */,
+				356D88D318F5AA3000452B40 /* NavViewController.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
 		FFBEF03A18F3304400006CFE = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +222,7 @@
 				FFBEF09918F3309A00006CFE /* FusionPower.m */,
 				FFBEF09418F3309A00006CFE /* Attack.h */,
 				FFBEF09518F3309A00006CFE /* Attack.m */,
+				35A3ABC718F46D2400E159C8 /* Menu */,
 				FFBEF0CF18F4613500006CFE /* Spells */,
 				FFBEF0D018F461B100006CFE /* Controllers */,
 				FFBEF0D118F461CA00006CFE /* Scenes */,
@@ -392,6 +418,7 @@
 				FFBEF0B418F3309A00006CFE /* joy_thumb.png in Resources */,
 				FFBEF06918F3304400006CFE /* Images.xcassets in Resources */,
 				FFBEF05F18F3304400006CFE /* Main_iPad.storyboard in Resources */,
+				35A3ABD118F47AB300E159C8 /* menuFundo.png in Resources */,
 				FFBEF0B318F3309A00006CFE /* isometric_grass_and_water.png in Resources */,
 				FFBEF0CA18F3309A00006CFE /* map.tmx in Resources */,
 				FFBEF0B018F3309A00006CFE /* fireSymbol.png in Resources */,
@@ -426,6 +453,9 @@
 				FFBEF0BD18F3309A00006CFE /* Attack.m in Sources */,
 				FFBEF0C518F3309A00006CFE /* Player.m in Sources */,
 				FFBEF0C318F3309A00006CFE /* LFCGzipUtility.m in Sources */,
+				356D88D418F5AA3000452B40 /* NavViewController.m in Sources */,
+				35A3ABCD18F46DDF00E159C8 /* MenuSegue.m in Sources */,
+				35A3ABCA18F46D5B00E159C8 /* MenuViewController.m in Sources */,
 				FFBEF05918F3304400006CFE /* AppDelegate.m in Sources */,
 				FFBEF0BF18F3309A00006CFE /* FusionPower.m in Sources */,
 				FFBEF0C718F3309A00006CFE /* ViewController.m in Sources */,
@@ -573,6 +603,7 @@
 				INFOPLIST_FILE = "Veneficia/Veneficia-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -587,6 +618,7 @@
 				INFOPLIST_FILE = "Veneficia/Veneficia-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SPRITEKIT_TEXTURE_ATLAS_OUTPUT = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -650,6 +682,7 @@
 				FFBEF08118F3304400006CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FFBEF08218F3304400006CFE /* Build configuration list for PBXNativeTarget "VeneficiaTests" */ = {
 			isa = XCConfigurationList;
@@ -658,6 +691,7 @@
 				FFBEF08418F3304400006CFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
