@@ -39,7 +39,7 @@
 		FFBEF0B618F3309A00006CFE /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08D18F3309A00006CFE /* spark.png */; };
 		FFBEF0B718F3309A00006CFE /* stick_base.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08E18F3309A00006CFE /* stick_base.png */; };
 		FFBEF0B818F3309A00006CFE /* stick_hold.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF08F18F3309A00006CFE /* stick_hold.png */; };
-		FFBEF0B918F3309A00006CFE /* terraSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF09018F3309A00006CFE /* terraSymbol.png */; };
+		FFBEF0B918F3309A00006CFE /* earthSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF09018F3309A00006CFE /* earthSymbol.png */; };
 		FFBEF0BA18F3309A00006CFE /* map.bmp in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF09118F3309A00006CFE /* map.bmp */; };
 		FFBEF0BB18F3309A00006CFE /* trees.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF09218F3309A00006CFE /* trees.png */; };
 		FFBEF0BC18F3309A00006CFE /* waterSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF09318F3309A00006CFE /* waterSymbol.png */; };
@@ -105,7 +105,7 @@
 		FFBEF08D18F3309A00006CFE /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		FFBEF08E18F3309A00006CFE /* stick_base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick_base.png; sourceTree = "<group>"; };
 		FFBEF08F18F3309A00006CFE /* stick_hold.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stick_hold.png; sourceTree = "<group>"; };
-		FFBEF09018F3309A00006CFE /* terraSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = terraSymbol.png; sourceTree = "<group>"; };
+		FFBEF09018F3309A00006CFE /* earthSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = earthSymbol.png; sourceTree = "<group>"; };
 		FFBEF09118F3309A00006CFE /* map.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = map.bmp; sourceTree = "<group>"; };
 		FFBEF09218F3309A00006CFE /* trees.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trees.png; sourceTree = "<group>"; };
 		FFBEF09318F3309A00006CFE /* waterSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterSymbol.png; sourceTree = "<group>"; };
@@ -309,10 +309,10 @@
 				5B7D5AC818F4869300A50B00 /* SWORD_WARRIOR.atlas */,
 				5B7D5AC918F4869300A50B00 /* megaMan.atlas */,
 				FFBEF08618F3309A00006CFE /* blackButton.png */,
-				FFBEF08718F3309A00006CFE /* fireSymbol.png */,
 				FFBEF08818F3309A00006CFE /* glassButtonBlue.png */,
 				FFBEF08918F3309A00006CFE /* glassButtonGreen.png */,
-				FFBEF09018F3309A00006CFE /* terraSymbol.png */,
+				FFBEF08718F3309A00006CFE /* fireSymbol.png */,
+				FFBEF09018F3309A00006CFE /* earthSymbol.png */,
 				FFBEF09318F3309A00006CFE /* waterSymbol.png */,
 			);
 			name = Images;
@@ -414,7 +414,7 @@
 				FFBEF05C18F3304400006CFE /* Main_iPhone.storyboard in Resources */,
 				FFBEF0BC18F3309A00006CFE /* waterSymbol.png in Resources */,
 				FFBEF0C818F3309A00006CFE /* FireRay.sks in Resources */,
-				FFBEF0B918F3309A00006CFE /* terraSymbol.png in Resources */,
+				FFBEF0B918F3309A00006CFE /* earthSymbol.png in Resources */,
 				FFBEF0C918F3309A00006CFE /* isometric_grass_and_water.tmx in Resources */,
 				FFBEF05318F3304400006CFE /* InfoPlist.strings in Resources */,
 				FFBEF0B518F3309A00006CFE /* joy_thumb@2x.png in Resources */,

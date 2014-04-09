@@ -1,5 +1,5 @@
 //
-//  MegaMan.h
+//  Player.h
 //  Veneficia
 //
 //  Created by Rodrigo Freitas Leite on 29/03/14.
@@ -9,6 +9,5 @@
 #import "Character.h"
 
 @interface Player : Character
-
 
 @end

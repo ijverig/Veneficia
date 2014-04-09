@@ -8,15 +8,9 @@
 
 #import "Character.h"
 
-@interface Character ()
-
-
-
-@end
-
 @implementation Character
 
--(id) initWithPosition:(CGPoint)position
+- (id)initWithPosition:(CGPoint)position
              direction:(float)direction
                   life:(float)life
               velocity:(float)velocity
@@ -25,6 +19,7 @@
              atlasName:(NSString *)atlasName
 {
     self = [super init];
+    
     if (self)
     {
         self.position = position;
@@ -34,32 +29,65 @@
         self.attack = attack;
         self.defense = defense;
         self.atlas = [SKTextureAtlas atlasNamed:atlasName];
-        [self incializeCharTextures];
+        [self initializeCharacterTextures];
     }
+    
     return self;
 }
 
-/////////////////////////////////////////////////
-// THESE METHODS NEED TO BE OVERRIDING BY SUBCLASS
+// THESE METHODS MUST BE OVERRIDDEN
+
 #pragma mark - Basic Movements
--(void)Up{ NSAssert(NO, @"SubClass of Character need to implements this method"); }
--(void)Down{ NSAssert(NO, @"SubClass of Character need to implements this method"); }
--(void)Left{ NSAssert(NO, @"SubClass of Character need to implements this method"); }
--(void)Right{ NSAssert(NO, @"SubClass of Character need to implements this method"); }
+
+- (void)Up
+{
+    NSAssert(NO, @"Character subclass must implement this method");
+}
+
+- (void)Down
+{
+    NSAssert(NO, @"Character subclass must implement this method");
+}
+
+- (void)Left
+{
+    NSAssert(NO, @"Character subclass must implement this method");
+}
+
+- (void)Right
+{
+    NSAssert(NO, @"Character subclass must implement this method");
+}
 
 #pragma mark - Diagonal Movements
--(void)UpLeft{ NSAssert(NO, @"SubClass of Character need to implements this method"); }
--(void)UpRight{ NSAssert(NO, @"SubClass of Character need to implements this method"); }
--(void)DownLeft{ NSAssert(NO, @"SubClass of Character need to implements this method"); }
--(void)DownRight{ NSAssert(NO, @"SubClass of Character need to implements this method"); }
 
+- (void)UpLeft
+{
+    NSAssert(NO, @"Character subclass must implement this method");
+}
 
-////////////////////////////////////////////////
+- (void)UpRight
+{
+    NSAssert(NO, @"Character subclass must implement this method");
+}
+
+- (void)DownLeft
+{
+    NSAssert(NO, @"Character subclass must implement this method");
+}
+
+- (void)DownRight
+{
+    NSAssert(NO, @"Character subclass must implement this method");
+}
+
+//
 // THIS METHOD CREATE ALL ACTIONS
 // WITH TEXTURES OF A ATLAS
 // ATLAS NEED TO BE THE FORMAT E.G BACKXXX, FRONTXXX
+//
 
--(void) incializeCharTextures
+- (void)initializeCharacterTextures
 {
     NSPredicate *predicateUP = [NSPredicate predicateWithFormat:@" SELF Like[c] 'UP*' "]; // change to UP after
     NSPredicate *predicateDOWN = [NSPredicate predicateWithFormat:@" SELF Like[c] 'DOWN*' "]; // change to DOWN after
@@ -71,31 +99,31 @@
     NSPredicate *predicateDOWN_LEFT = [NSPredicate predicateWithFormat:@" SELF Like[c] 'DOWN_LEFT*' "];
 
     
-    self.textureUP = [self generateArrayTextures:[self.atlas textureNames] Withpredicate:predicateUP];
-    self.textureDOWN = [self generateArrayTextures:[self.atlas textureNames] Withpredicate:predicateDOWN];
-    self.textureLEFT = [self generateArrayTextures:[self.atlas textureNames] Withpredicate:predicateLEFT];
-    self.textureRIGHT = [self generateArrayTextures:[self.atlas textureNames] Withpredicate:predicateRIGHT];
-    self.textureUP_LEFT = [self generateArrayTextures:[self.atlas textureNames] Withpredicate:predicateUP_LEFT];
-    self.textureUP_RIGHT = [self generateArrayTextures:[self.atlas textureNames] Withpredicate:predicateUP_RIGHT];
-    self.textureDOWN_LEFT = [self generateArrayTextures:[self.atlas textureNames] Withpredicate:predicateDOWN_LEFT];
-    self.textureDOWN_RIGHT = [self generateArrayTextures:[self.atlas textureNames] Withpredicate:predicateDOWN_RIGHT];
+    self.textureUP = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateUP];
+    self.textureDOWN = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateDOWN];
+    self.textureLEFT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateLEFT];
+    self.textureRIGHT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateRIGHT];
+    self.textureUP_LEFT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateUP_LEFT];
+    self.textureUP_RIGHT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateUP_RIGHT];
+    self.textureDOWN_LEFT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateDOWN_LEFT];
+    self.textureDOWN_RIGHT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateDOWN_RIGHT];
 }
 
-
-//////////////////////////////////////////////////////
-// THIS METHOD RECEIVE A ARRAY OF STRING WITH TEXTURE NAMES
+//
+// THIS METHOD RECEIVE AN ARRAY OF STRINGS WITH TEXTURE NAMES
 // AND A PREDICATE TO GET THE BUNCH STRING FILES THAT NEED IT.
 // GENERATE A ARRAY OF TEXTURE IN ORDER OF ANIMATION.
--(NSMutableArray*) generateArrayTextures:(NSArray*)textureName Withpredicate:(NSPredicate*)predicate
+//
+
+- (NSMutableArray *)generateTexturesArray:(NSArray *)textureNames withPredicate:(NSPredicate *)predicate
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    NSArray *textureSide = [[textureName filteredArrayUsingPredicate:predicate]
+    NSArray *textureSide = [[textureNames filteredArrayUsingPredicate:predicate]
                                             sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     for (NSString *s in textureSide)
         [array addObject:[SKTexture textureWithImageNamed:s]];
-    return array;
     
+    return array;
 }
-
 
 @end

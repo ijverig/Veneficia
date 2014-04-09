@@ -10,7 +10,7 @@
 
 @interface MagicPower : SKEmitterNode
 
-@property(nonatomic) float damage;
-@property(strong,nonatomic) NSString *sourcePlayer;
+@property (nonatomic) float damage;
+@property (strong, nonatomic) NSString *sourcePlayer;
 
 @end

@@ -13,10 +13,13 @@
 - (instancetype)init
 {
     self = [super init];
-    if (self) {
+    
+    if (self)
+    {
         _damage = 0;
         _sourcePlayer = @"";
     }
+    
     return self;
 }
 
