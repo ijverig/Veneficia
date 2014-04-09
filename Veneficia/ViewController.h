@@ -1,6 +1,6 @@
 //
 //  ViewController.h
-//  Veneficus
+//  Veneficia
 //
 
 //  Copyright (c) 2014 Frelei. All rights reserved.
