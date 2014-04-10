@@ -12,7 +12,7 @@
 @interface FusionPower : NSObject
 
 - (id)initWithSizeofScreen:(CGSize)size andMap:(SKNode *)map;
-- (void)addPower:(SKNode *)powerName;
+- (void)addPower:(NSString *)powerName;
 - (SKNode *)shotPower;
 - (NSMutableArray *)showPower;
 

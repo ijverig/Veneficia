@@ -22,6 +22,7 @@
 @property(nonatomic) Attack *factoryAttack;
 @property(nonatomic) JSTileMap *map;
 @property(nonatomic) FusionPower *fusionPower;
+@property(nonatomic) NSString *lastTouched;
 
 @end
 
@@ -74,7 +75,15 @@
         shotButton.name = @"SHOT";
         shotButton.zPosition = 1.0;
         shotButton.size = CGSizeMake(60, 60);
+        [shotButton setHidden:YES];
         [self addChild:shotButton];
+        
+        SKSpriteNode *lightningNode = [[SKSpriteNode alloc] initWithImageNamed:@"lightningSymbol"];
+        lightningNode.position = CGPointMake(size.width - 140, 50);
+        lightningNode.name = @"LIGHTNING";
+        lightningNode.zPosition = 1.0;
+        lightningNode.size = CGSizeMake(50, 50);
+        [self addChild:lightningNode];
         
         // joystick controller
         self.joystick = joystick;
@@ -211,30 +220,50 @@
 
 #pragma mark - Continuous Touches
 
+
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
-    if ([node.name isEqualToString:@"FIRE"])
+    if ([node.name isEqualToString:@"FIRE"] && ![_lastTouched isEqualToString:@"FIRE"])
     {
-        [self.fusionPower addPower:node];
+        _lastTouched = @"FIRE";
+        [self.fusionPower addPower:node.name];
         NSLog(@"Shot FIRE");
     }
     
-    
-    if ([node.name isEqualToString:@"WATER"])
+    if ([node.name isEqualToString:@"WATER"] && ![_lastTouched isEqualToString:@"WATER"])
     {
-        [self.fusionPower addPower:node];
+        _lastTouched = @"WATER";
+        [self.fusionPower addPower:node.name];
         NSLog(@"Shot WATER");
     }
     
-    if ([node.name isEqualToString:@"EARTH"])
+    if ([node.name isEqualToString:@"EARTH"] && ![_lastTouched isEqualToString:@"EARTH"])
     {
-        [self.fusionPower addPower:node];
+        _lastTouched = @"EARTH";
+        [self.fusionPower addPower:node.name];
         NSLog(@"Shot EARTH");
     }
+    
+    if ([node.name isEqualToString:@"SHOT"] && ![_lastTouched isEqualToString:@"SHOT"])
+    {
+        _lastTouched = @"SHOT";
+    }
+    
+    if ([node.name isEqualToString:@"LIGHTNING"] && ![_lastTouched isEqualToString:@"LIGHTNING"])
+    {
+        _lastTouched = @"LIGHTNING";
+        [self.fusionPower addPower:node.name];
+        NSLog(@"Shot LIGHTNING");
+    }
+}
+
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.fusionPower shotPower];
 }
 
 #pragma mark - Joystick Delegate

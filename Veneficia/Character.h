@@ -74,4 +74,8 @@
 - (void)initializeCharacterTextures;
 - (NSMutableArray *)generateTexturesArray:(NSArray *)textureNames withPredicate:(NSPredicate *)predicate;
 
+//LIFE CHANGE
+- (void)incraseLife:(float)value;
+- (void)decreaseLife:(float)damage;
+
 @end
