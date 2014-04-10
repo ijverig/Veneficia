@@ -11,28 +11,50 @@
 @implementation Character
 
 - (id)initWithPosition:(CGPoint)position
+                  name:(NSString *)name
              direction:(float)direction
                   life:(float)life
               velocity:(float)velocity
                 attack:(float)attack
                defense:(float)defense
              atlasName:(NSString *)atlasName
+                  size:(CGSize)size;
 {
     self = [super init];
     
     if (self)
     {
         self.position = position;
+        self.name = name;
         self.direction = direction;
-        self.life = life;
+        self.life = [[Life alloc] initWithInitialAmount:life];
         self.velocity = velocity;
         self.attack = attack;
         self.defense = defense;
         self.atlas = [SKTextureAtlas atlasNamed:atlasName];
+        self.size = size;
+        
         [self initializeCharacterTextures];
+
+        [self addChild:self.life.bar];
     }
     
     return self;
+}
+
+- (void)decreaseLifeByAmount:(float)amount
+{
+    [self.life decreaseByAmount:amount];
+}
+
+- (void)increaseLifeByAmount:(float)amount
+{
+    [self.life increaseByAmount:amount];
+}
+
+- (BOOL)isAlive
+{
+    return [self.life isAlive];
 }
 
 // THESE METHODS MUST BE OVERRIDDEN
@@ -121,7 +143,7 @@
     NSArray *textureSide = [[textureNames filteredArrayUsingPredicate:predicate]
                                             sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     for (NSString *s in textureSide)
-        [array addObject:[SKTexture textureWithImageNamed:s]];
+        [array addObject:[self.atlas textureNamed:s]];
     
     return array;
 }

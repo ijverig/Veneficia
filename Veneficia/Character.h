@@ -10,6 +10,9 @@
 //  REPRESENTS AN ABSTRACT CLASS THAT EXTENDS SKSPRITENODE
 //
 
+#import <SpriteKit/SpriteKit.h>
+#import "Life.h"
+
 // LISTA DE DEFINICOES - COUNTERCLOCKWISE
 
 #define UP         0
@@ -21,22 +24,12 @@
 #define RIGHT      6
 #define UP_RIGHT   7
 
-#import <SpriteKit/SpriteKit.h>
-
 @interface Character : SKSpriteNode
-
-- (id) initWithPosition:(CGPoint)position
-              direction:(float)direction
-                   life:(float)life
-               velocity:(float)velocity
-                 attack:(float)attack
-                defense:(float)defense
-              atlasName:(NSString*)atlasName;
 
 // character properties
 @property (nonatomic) CGPoint position;
 @property (nonatomic) float direction;
-@property (nonatomic) float life;
+@property (nonatomic) Life *life;
 @property (nonatomic) float velocity;
 @property (nonatomic) float attack;
 @property (nonatomic) float defense;
@@ -61,6 +54,20 @@
 @property (nonatomic) SKAction *actionUP_LEFT;
 @property (nonatomic) SKAction *actionDOWN_RIGHT;
 @property (nonatomic) SKAction *actionDOWN_LEFT;
+
+- (id)initWithPosition:(CGPoint)position
+                  name:(NSString *)name
+             direction:(float)direction
+                  life:(float)life
+              velocity:(float)velocity
+                attack:(float)attack
+               defense:(float)defense
+             atlasName:(NSString *)atlasName
+                  size:(CGSize)size;
+
+- (void)decreaseLifeByAmount:(float)amount;
+- (void)increaseLifeByAmount:(float)amount;
+- (BOOL)isAlive;
 
 // METHODS THAT NEED TO BE OVERRIDDEN
 - (void)Up;

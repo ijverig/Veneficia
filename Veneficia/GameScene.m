@@ -80,37 +80,28 @@
         self.joystick = joystick;
         self.joystick.delegate = self;
         
-//        // main player
+        // main player
         self.redWarrior = [[Player alloc] initWithPosition:CGPointMake(size.width, size.height)
+                                                      name:@"RED_WARRIOR"
                                                  direction:DOWN
                                                       life:1000
                                                   velocity:10
                                                     attack:10
-                                                   defense:1000 atlasName:@"redWarrior"];
-        self.redWarrior.name = @"RED_WARRIOR";
-        self.redWarrior.size = CGSizeMake(100, 100);
+                                                   defense:1000
+                                                 atlasName:@"redWarrior"
+                                                      size:CGSizeMake(100, 100)];
         [self.map addChild:self.redWarrior];
-//        self.megaman = [[Player alloc] initWithPosition:CGPointMake(size.width, size.height)
-//                                              direction:DOWN
-//                                                   life:1000
-//                                               velocity:50
-//                                                 attack:1000
-//                                                defense:1000
-//                                              atlasName:@"megaMan"];
-//        self.megaman.name = @"Mega-man";
-//        self.megaman.size = CGSizeMake(60, 60);
-//        [self.map addChild:self.megaman];
         
         // enemy player
-        self.enemy = [[Player alloc] initWithPosition:CGPointMake(size.width +100, size.height +100)
+        self.enemy = [[Player alloc] initWithPosition:CGPointMake(size.width + 100, size.height + 100)
+                                                 name:@"ENEMY"
                                             direction:DOWN
                                                  life:1000
                                              velocity:20
                                                attack:1000
                                               defense:1000
-                                            atlasName:@"megaMan"];
-        self.enemy.name = @"enemy";
-        self.enemy.size = CGSizeMake(60, 60);
+                                            atlasName:@"megaMan"
+                                                 size:CGSizeMake(60, 60)];
         [self.map addChild:self.enemy];
         
         // spell factory
@@ -277,6 +268,7 @@
 {
     [self centerOnNode:self.redWarrior];
     [self dummyEnemy];
+    [self dummyAttackAndHeal];
 }
 
 - (void)dummyEnemy
@@ -311,6 +303,27 @@
             
         default:
             break;
+    }
+}
+
+- (void)dummyAttackAndHeal
+{
+    switch (arc4random_uniform(30))
+    {
+        case 10:
+            [self.redWarrior decreaseLifeByAmount:237.0];
+            NSLog(@"Life: %.0f | Dead: %d", self.redWarrior.life.amount, ![self.redWarrior isAlive]);
+            break;
+            
+        case 20:
+            [self.redWarrior increaseLifeByAmount:183.0];
+            NSLog(@"Life: %.0f | Dead: %d", self.redWarrior.life.amount, ![self.redWarrior isAlive]);
+            break;
+    }
+    
+    if (![self.redWarrior isAlive])
+    {
+        [self.redWarrior removeFromParent];
     }
 }
 
