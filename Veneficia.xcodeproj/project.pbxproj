@@ -21,6 +21,7 @@
 		5BF2C93718F5BAF10005C38C /* MenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2C93218F5BAF10005C38C /* MenuSegue.m */; };
 		5BF2C93818F5BAF10005C38C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2C93418F5BAF10005C38C /* MenuViewController.m */; };
 		5BF2C93918F5BAF10005C38C /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BF2C93618F5BAF10005C38C /* NavViewController.m */; };
+		FF8037A018F5C08600872143 /* Life.m in Sources */ = {isa = PBXBuildFile; fileRef = FF80379F18F5C08600872143 /* Life.m */; };
 		FFBEF04718F3304400006CFE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04618F3304400006CFE /* Foundation.framework */; };
 		FFBEF04918F3304400006CFE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04818F3304400006CFE /* CoreGraphics.framework */; };
 		FFBEF04B18F3304400006CFE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF04A18F3304400006CFE /* UIKit.framework */; };
@@ -93,6 +94,8 @@
 		5BF2C93418F5BAF10005C38C /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		5BF2C93518F5BAF10005C38C /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
 		5BF2C93618F5BAF10005C38C /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
+		FF80379E18F5C08600872143 /* Life.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Life.h; sourceTree = "<group>"; };
+		FF80379F18F5C08600872143 /* Life.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Life.m; sourceTree = "<group>"; };
 		FFBEF04318F3304400006CFE /* Veneficia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Veneficia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFBEF04618F3304400006CFE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FFBEF04818F3304400006CFE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -230,6 +233,8 @@
 			children = (
 				FFBEF09618F3309A00006CFE /* Character.h */,
 				FFBEF09718F3309A00006CFE /* Character.m */,
+				FF80379E18F5C08600872143 /* Life.h */,
+				FF80379F18F5C08600872143 /* Life.m */,
 				FFBEF0A418F3309A00006CFE /* Player.h */,
 				5B7D5ACE18F486DB00A50B00 /* Player.m */,
 				FFBEF0A218F3309A00006CFE /* MagicPower.h */,
@@ -478,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFBEF0C218F3309A00006CFE /* JSTileMap.m in Sources */,
+				FF8037A018F5C08600872143 /* Life.m in Sources */,
 				FFBEF0BD18F3309A00006CFE /* Attack.m in Sources */,
 				5BF2C93718F5BAF10005C38C /* MenuSegue.m in Sources */,
 				FFBEF0C318F3309A00006CFE /* LFCGzipUtility.m in Sources */,

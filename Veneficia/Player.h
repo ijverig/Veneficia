@@ -10,4 +10,14 @@
 
 @interface Player : Character
 
+- (id)initWithPosition:(CGPoint)position
+                  name:(NSString *)name
+             direction:(float)direction
+                  life:(float)life
+              velocity:(float)velocity
+                attack:(float)attack
+               defense:(float)defense
+             atlasName:(NSString *)atlasName
+                  size:(CGSize)size;
+
 @end

@@ -13,6 +13,5 @@
 
 - (id)initWithSize:(CGSize)size andJoystick:(Joystick *)joystick;
 - (void)centerOnNode:(SKNode *)node;
-- (void)dummyEnemy;
 
 @end

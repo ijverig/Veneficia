@@ -11,20 +11,24 @@
 @implementation Player
 
 - (id)initWithPosition:(CGPoint)position
+                  name:(NSString *)name
              direction:(float)direction
                   life:(float)life
               velocity:(float)velocity
                 attack:(float)attack
                defense:(float)defense
              atlasName:(NSString *)atlasName
+                  size:(CGSize)size
 {
     self = [super initWithPosition:position
+                              name:name
                          direction:direction
                               life:life
                           velocity:velocity
                             attack:attack
                            defense:defense
-                         atlasName:atlasName];
+                         atlasName:atlasName
+                              size:size];
     
     if (self)
     {
