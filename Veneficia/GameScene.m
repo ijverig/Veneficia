@@ -41,14 +41,14 @@
     if (self = [super initWithSize:size])
     {
         // map
-        //        NSLog(@"Point: %@", NSStringFromCGPoint(self.anchorPoint));
+//        NSLog(@"Point: %@", NSStringFromCGPoint(self.anchorPoint));
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
-        //        TILE MAP
-        //        JSTileMap* tiledMap = [JSTileMap mapNamed:@"isometric_grass_and_water.tmx"];
+//        TILE MAP
+//        JSTileMap* tiledMap = [JSTileMap mapNamed:@"isometric_grass_and_water.tmx"];
         self.map = [JSTileMap mapNamed:@"map.tmx"];
-        //        CGRect mapBounds = [self.map calculateAccumulatedFrame];
-        //        NSLog(@"%@",NSStringFromCGRect(mapBounds));
-        //        NSLog(@"%f %f",mapBounds.size.height, mapBounds.size.width);
+//        CGRect mapBounds = [self.map calculateAccumulatedFrame];
+//        NSLog(@"%@",NSStringFromCGRect(mapBounds));
+//        NSLog(@"%f %f",mapBounds.size.height, mapBounds.size.width);
         self.map.position = CGPointMake(-500, -500);
         [self addChild:self.map];
         
@@ -130,7 +130,7 @@
                                                     attack:10
                                                    defense:1000
                                                  atlasName:@"redWarrior"
-                                                      size:CGSizeMake(100, 100)];
+                                                      size:CGSizeMake(100, 106)];
         [self.map addChild:self.redWarrior];
         
         // enemy player
@@ -142,7 +142,7 @@
                                                attack:1000
                                               defense:1000
                                             atlasName:@"megaMan"
-                                                 size:CGSizeMake(60, 60)];
+                                                 size:CGSizeMake(36, 68)];
         [self.map addChild:self.enemy];
         
         // spell factory
@@ -473,6 +473,16 @@
 
 - (void)update:(NSTimeInterval)currentTime
 {
+    if (![self.redWarrior isAlive])
+    {
+        [self.redWarrior removeFromParent];
+    }
+    
+    if (![self.enemy isAlive])
+    {
+        [self.enemy removeFromParent];
+    }
+    
     [self centerOnNode:self.redWarrior];
     [self dummyEnemy];
     [self dummyAttackAndHeal];
@@ -480,7 +490,7 @@
 
 - (void)dummyEnemy
 {
-    int rand = arc4random_uniform(4);
+    int rand = arc4random_uniform(40);
 
     switch (rand)
     {
@@ -515,22 +525,25 @@
 
 - (void)dummyAttackAndHeal
 {
-    switch (arc4random_uniform(30))
+    switch (arc4random_uniform(200))
     {
         case 10:
-            [self.redWarrior decreaseLifeByAmount:237.0];
-            NSLog(@"Life: %.0f | Dead: %d", self.redWarrior.life.amount, ![self.redWarrior isAlive]);
+            [self.redWarrior decreaseLifeByAmount:247.0];
+//            NSLog(@"Life: %4.0f | Dead: %@", self.redWarrior.life.amount, [self.redWarrior isAlive] ? @"nope" : @"yep");
             break;
             
         case 20:
             [self.redWarrior increaseLifeByAmount:183.0];
-            NSLog(@"Life: %.0f | Dead: %d", self.redWarrior.life.amount, ![self.redWarrior isAlive]);
+//            NSLog(@"Life: %4.0f | Dead: %@", self.redWarrior.life.amount, [self.redWarrior isAlive] ? @"nope" : @"yep");
             break;
-    }
-    
-    if (![self.redWarrior isAlive])
-    {
-        [self.redWarrior removeFromParent];
+
+        case 30:
+            [self.enemy decreaseLifeByAmount:259.0];
+            break;
+            
+        case 40:
+            [self.enemy increaseLifeByAmount:163.0];
+            break;
     }
 }
 

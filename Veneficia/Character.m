@@ -27,12 +27,12 @@
         self.position = position;
         self.name = name;
         self.direction = direction;
-        self.life = [[Life alloc] initWithInitialAmount:life];
         self.velocity = velocity;
         self.attack = attack;
         self.defense = defense;
         self.atlas = [SKTextureAtlas atlasNamed:atlasName];
         self.size = size;
+        self.life = [[Life alloc] initWithInitialAmount:life];
         
         [self initializeCharacterTextures];
 
