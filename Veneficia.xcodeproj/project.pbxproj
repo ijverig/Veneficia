@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3539346F18F70808007309BA /* lavaSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 3539346E18F70808007309BA /* lavaSymbol.png */; };
+		357D456818F85984007FDFAF /* quarter.png in Resources */ = {isa = PBXBuildFile; fileRef = 357D456718F85984007FDFAF /* quarter.png */; };
+		357D456A18F86BF0007FDFAF /* quarter 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 357D456918F86BF0007FDFAF /* quarter 2.png */; };
 		35F8025C18F71F0B007A445E /* lifeSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 35F8025B18F71F0B007A445E /* lifeSymbol.png */; };
 		35F8025E18F72123007A445E /* lightningSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 35F8025D18F72123007A445E /* lightningSymbol.png */; };
 		5B7D5ACA18F4869300A50B00 /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC618F4869300A50B00 /* bird.atlas */; };
@@ -78,6 +80,8 @@
 
 /* Begin PBXFileReference section */
 		3539346E18F70808007309BA /* lavaSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lavaSymbol.png; sourceTree = "<group>"; };
+		357D456718F85984007FDFAF /* quarter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quarter.png; sourceTree = "<group>"; };
+		357D456918F86BF0007FDFAF /* quarter 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quarter 2.png"; sourceTree = "<group>"; };
 		35F8025B18F71F0B007A445E /* lifeSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lifeSymbol.png; sourceTree = "<group>"; };
 		35F8025D18F72123007A445E /* lightningSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightningSymbol.png; sourceTree = "<group>"; };
 		5B7D5AC618F4869300A50B00 /* bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bird.atlas; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 				FFBEF09018F3309A00006CFE /* earthSymbol.png */,
 				FFBEF09318F3309A00006CFE /* waterSymbol.png */,
 				35F8025D18F72123007A445E /* lightningSymbol.png */,
+				357D456718F85984007FDFAF /* quarter.png */,
+				357D456918F86BF0007FDFAF /* quarter 2.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 				FFBEF0B718F3309A00006CFE /* stick_base.png in Resources */,
 				FFBEF05C18F3304400006CFE /* Main_iPhone.storyboard in Resources */,
 				FFBEF0BC18F3309A00006CFE /* waterSymbol.png in Resources */,
+				357D456A18F86BF0007FDFAF /* quarter 2.png in Resources */,
 				FFBEF0C818F3309A00006CFE /* FireRay.sks in Resources */,
 				FFBEF0B918F3309A00006CFE /* earthSymbol.png in Resources */,
 				FFBEF0C918F3309A00006CFE /* isometric_grass_and_water.tmx in Resources */,
@@ -464,6 +471,7 @@
 				5B7D5ACA18F4869300A50B00 /* bird.atlas in Resources */,
 				5BF2C93018F5BADD0005C38C /* menuFundo.png in Resources */,
 				FFBEF0BA18F3309A00006CFE /* map.bmp in Resources */,
+				357D456818F85984007FDFAF /* quarter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

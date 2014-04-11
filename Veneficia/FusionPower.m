@@ -58,51 +58,40 @@
     
     if([receiver isEqualToString:@"FIRE"])
     {
-        for(NSInteger i=0; i<_stack.count; i++)
+
+        SKNode *aux = [_stack lastObject];
+        if([aux.name isEqualToString:@"EARTH"])
         {
-            SKNode *aux = _stack[i];
-            if([aux.name isEqualToString:@"EARTH"])
-            {
-                [_stack removeObject:aux];
-                [aux removeFromParent];
-                return @"LAVA";
-            }
-            
+            [_stack removeObject:aux];
+            [aux removeFromParent];
+            return @"LAVA";
         }
+        
     }
     else if([receiver isEqualToString:@"EARTH"])
     {
-        for(NSInteger i=0; i<_stack.count; i++)
+        SKNode *aux = [_stack lastObject];
+        if([aux.name isEqualToString:@"FIRE"])
         {
-            SKNode *aux = _stack[i];
-            if([aux.name isEqualToString:@"FIRE"])
-            {
-                [_stack removeObject:aux];
-                [aux removeFromParent];
-                return @"LAVA";
-            }
-            if([aux.name isEqualToString:@"LIGHTNING"])
-            {
-                [_stack removeObject:aux];
-                [aux removeFromParent];
-                return @"LIFE";
-            }
-
-            
+            [_stack removeObject:aux];
+            [aux removeFromParent];
+            return @"LAVA";
+        }
+        if([aux.name isEqualToString:@"LIGHTNING"])
+        {
+            [_stack removeObject:aux];
+            [aux removeFromParent];
+            return @"LIFE";
         }
     }
     else if([receiver isEqualToString:@"LIGHTNING"])
     {
-        for(NSInteger i=0; i<_stack.count; i++)
+        SKNode *aux = [_stack lastObject];
+        if([aux.name isEqualToString:@"EARTH"])
         {
-            SKNode *aux = _stack[i];
-            if([aux.name isEqualToString:@"EARTH"])
-            {
-                [_stack removeObject:aux];
-                [aux removeFromParent];
-                return @"LIFE";
-            }
-            
+            [_stack removeObject:aux];
+            [aux removeFromParent];
+            return @"LIFE";
         }
     }
     return receiver;
@@ -136,6 +125,7 @@
         NSString *newPower = [self fusion:powerName];
         if (newPower != powerName) //FUSION OCURRED
         {
+            [self fixLastNodePosition];
             [self createPower:newPower];
         }
     }

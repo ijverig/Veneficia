@@ -23,6 +23,10 @@
 @property(nonatomic) JSTileMap *map;
 @property(nonatomic) FusionPower *fusionPower;
 @property(nonatomic) NSString *lastTouched;
+@property(nonatomic) SKSpriteNode *shootButton1;
+@property(nonatomic) SKSpriteNode *shootButton2;
+@property(nonatomic) SKSpriteNode *shootButton3;
+@property(nonatomic) SKSpriteNode *shootButton4;
 
 @end
 
@@ -48,38 +52,66 @@
         self.map.position = CGPointMake(-500, -500);
         [self addChild:self.map];
         
+        //shooters
+        _shootButton1 = [[SKSpriteNode alloc] initWithImageNamed:@"quarter 2"];
+        _shootButton1.position = CGPointMake(size.width - 200, 180);
+        _shootButton1.name = @"SHOT1";
+        _shootButton1.zPosition = 1.0;
+        _shootButton1.size = CGSizeMake(150, 150);
+        [_shootButton1 setAlpha:0.5];
+        [self addChild:_shootButton1];
+        
+        _shootButton2 = [[SKSpriteNode alloc] initWithImageNamed:@"quarter 2"];
+        _shootButton2.position = CGPointMake(size.width - 198, 78);
+        _shootButton2.name = @"SHOT2";
+        _shootButton2.zPosition = 1.0;
+        _shootButton2.size = CGSizeMake(150, 150);
+        [_shootButton2 setZRotation:M_PI/2];
+        [_shootButton2 setAlpha:0.5];
+        [self addChild:_shootButton2];
+        
+        _shootButton3 = [[SKSpriteNode alloc] initWithImageNamed:@"quarter 2"];
+        _shootButton3.position = CGPointMake(size.width - 96, 80);
+        _shootButton3.name = @"SHOT3";
+        _shootButton3.zPosition = 1.0;
+        _shootButton3.size = CGSizeMake(150, 150);
+        [_shootButton3 setZRotation:M_PI];
+        [_shootButton3 setAlpha:0.5];
+        [self addChild:_shootButton3];
+        
+        _shootButton4 = [[SKSpriteNode alloc] initWithImageNamed:@"quarter 2"];
+        _shootButton4.position = CGPointMake(size.width - 98, 182);
+        _shootButton4.name = @"SHOT4";
+        _shootButton4.zPosition = 1.0;
+        _shootButton4.size = CGSizeMake(150, 150);
+        [_shootButton4 setZRotation:M_PI*3/2];
+        [_shootButton4 setAlpha:0.5];
+        [self addChild:_shootButton4];
+        
         // spells controller
         SKSpriteNode *fireNode = [[SKSpriteNode alloc] initWithImageNamed:@"fireSymbol"];
-        fireNode.position = CGPointMake(size.width - 140, 200);
+        fireNode.position = CGPointMake(size.width - 147, 228);
         fireNode.name = @"FIRE";
         fireNode.zPosition = 1.0;
         fireNode.size = CGSizeMake(50, 50);
         [self addChild:fireNode];
         
         SKSpriteNode *waterNode = [[SKSpriteNode alloc] initWithImageNamed:@"waterSymbol"];
-        waterNode.position = CGPointMake(size.width - 220, 120);
+        waterNode.position = CGPointMake(size.width - 245, 130);
         waterNode.name = @"WATER";
         waterNode.zPosition = 1.0;
         waterNode.size = CGSizeMake(50, 50);
         [self addChild:waterNode];
         
         SKSpriteNode *earthNode = [[SKSpriteNode alloc] initWithImageNamed:@"earthSymbol"];
-        earthNode.position = CGPointMake(size.width - 60, 120);
+        earthNode.position = CGPointMake(size.width - 55, 130);
         earthNode.name = @"EARTH";
         earthNode.zPosition = 1.0;
         earthNode.size = CGSizeMake(50, 50);
         [self addChild:earthNode];
         
-        SKSpriteNode *shotButton = [[SKSpriteNode alloc] initWithImageNamed:@"glassButtonGreen"];
-        shotButton.position = CGPointMake(size.width - 140, 120);
-        shotButton.name = @"SHOT";
-        shotButton.zPosition = 1.0;
-        shotButton.size = CGSizeMake(60, 60);
-        [shotButton setHidden:YES];
-        [self addChild:shotButton];
-        
         SKSpriteNode *lightningNode = [[SKSpriteNode alloc] initWithImageNamed:@"lightningSymbol"];
-        lightningNode.position = CGPointMake(size.width - 140, 50);
+        lightningNode.position = CGPointMake(size.width - 147, 35);
         lightningNode.name = @"LIGHTNING";
         lightningNode.zPosition = 1.0;
         lightningNode.size = CGSizeMake(50, 50);
@@ -131,81 +163,157 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
-    if ([node.name isEqualToString:@"FIRE"])
+//    if ([node.name isEqualToString:@"FIRE"])
+//    {
+//        NSString *fireRayPath = [[NSBundle mainBundle] pathForResource:@"FireRay" ofType:@"sks"];
+//		self.emmiter = [NSKeyedUnarchiver unarchiveObjectWithFile:fireRayPath];
+//        self.emmiter.particlePosition = self.redWarrior.position;
+//        [self.map addChild:self.emmiter];
+//        
+//        if (self.redWarrior.direction == LEFT)
+//        {
+//            self.emmiter.emissionAngle = 0;
+//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:-self.view.bounds.size.width duration:1.0],
+//                                                        [SKAction removeFromParent]]]];
+//        }
+//        
+//        if (self.redWarrior.direction == RIGHT)
+//        {
+//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:self.view.bounds.size.width duration:1.0],
+//                                                         [SKAction removeFromParent]]]];
+//        }
+//        
+//        if (self.redWarrior.direction == UP)
+//        {
+//            self.emmiter.emissionAngle = -M_PI/2;
+//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:self.view.bounds.size.width duration:1.0],
+//                                                        [SKAction removeFromParent]]]];
+//        }
+//        
+//        if (self.redWarrior.direction == DOWN)
+//        {
+//            self.emmiter.emissionAngle = M_PI/2;
+//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:-self.view.bounds.size.width duration:1.0],
+//                                                         [SKAction removeFromParent]]]];
+//        }
+//    }
+//    
+//    if ([node.name isEqualToString:@"WATER"])
+//    {
+//        NSString *WaterRay = [[NSBundle mainBundle] pathForResource:@"Water" ofType:@"sks"];
+//		self.emmiter = [NSKeyedUnarchiver unarchiveObjectWithFile:WaterRay];
+//        self.emmiter.particlePosition = self.redWarrior.position;
+//        [self.map addChild:self.emmiter];
+//        
+//        if (self.redWarrior.direction == LEFT)
+//        {
+//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:-self.view.bounds.size.width duration:1.0],
+//                                                         [SKAction removeFromParent]]]];
+//        }
+//        
+//        if (self.redWarrior.direction == RIGHT)
+//        {
+//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:self.view.bounds.size.width duration:1.0],
+//                                                         [SKAction removeFromParent]]]];
+//        }
+//        
+//        if (self.redWarrior.direction == UP)
+//        {
+//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:self.view.bounds.size.width duration:1.0],
+//                                                         [SKAction removeFromParent]]]];
+//        }
+//        
+//        if (self.redWarrior.direction == DOWN)
+//        {
+//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:-self.view.bounds.size.width duration:1.0],
+//                                                         [SKAction removeFromParent]]]];
+//        }
+//    }
+//    
+//    if ([node.name isEqualToString:@"EARTH"])
+//    {
+//        NSLog(@"=== EARTH SPELL ===");
+//    }
+//    
+//    if ([node.name isEqualToString:@"SHOT"])
+//    {
+//        [self.fusionPower shotPower];
+//    }
+    
+    if ([node.name isEqualToString:@"FIRE"] && ![_lastTouched isEqualToString:@"FIRE"])
     {
-        NSString *fireRayPath = [[NSBundle mainBundle] pathForResource:@"FireRay" ofType:@"sks"];
-		self.emmiter = [NSKeyedUnarchiver unarchiveObjectWithFile:fireRayPath];
-        self.emmiter.particlePosition = self.redWarrior.position;
-        [self.map addChild:self.emmiter];
-        
-        if (self.redWarrior.direction == LEFT)
-        {
-            self.emmiter.emissionAngle = 0;
-            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:-self.view.bounds.size.width duration:1.0],
-                                                        [SKAction removeFromParent]]]];
-        }
-        
-        if (self.redWarrior.direction == RIGHT)
-        {
-            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:self.view.bounds.size.width duration:1.0],
-                                                         [SKAction removeFromParent]]]];
-        }
-        
-        if (self.redWarrior.direction == UP)
-        {
-            self.emmiter.emissionAngle = -M_PI/2;
-            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:self.view.bounds.size.width duration:1.0],
-                                                        [SKAction removeFromParent]]]];
-        }
-        
-        if (self.redWarrior.direction == DOWN)
-        {
-            self.emmiter.emissionAngle = M_PI/2;
-            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:-self.view.bounds.size.width duration:1.0],
-                                                         [SKAction removeFromParent]]]];
-        }
+        [self shotSmall];
+        _lastTouched = @"FIRE";
+        [self.fusionPower addPower:node.name];
+        NSLog(@"Shot FIRE");
     }
     
-    if ([node.name isEqualToString:@"WATER"])
+    if ([node.name isEqualToString:@"WATER"] && ![_lastTouched isEqualToString:@"WATER"])
     {
-        NSString *WaterRay = [[NSBundle mainBundle] pathForResource:@"Water" ofType:@"sks"];
-		self.emmiter = [NSKeyedUnarchiver unarchiveObjectWithFile:WaterRay];
-        self.emmiter.particlePosition = self.redWarrior.position;
-        [self.map addChild:self.emmiter];
-        
-        if (self.redWarrior.direction == LEFT)
-        {
-            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:-self.view.bounds.size.width duration:1.0],
-                                                         [SKAction removeFromParent]]]];
-        }
-        
-        if (self.redWarrior.direction == RIGHT)
-        {
-            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:self.view.bounds.size.width duration:1.0],
-                                                         [SKAction removeFromParent]]]];
-        }
-        
-        if (self.redWarrior.direction == UP)
-        {
-            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:self.view.bounds.size.width duration:1.0],
-                                                         [SKAction removeFromParent]]]];
-        }
-        
-        if (self.redWarrior.direction == DOWN)
-        {
-            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:-self.view.bounds.size.width duration:1.0],
-                                                         [SKAction removeFromParent]]]];
-        }
+        [self shotSmall];
+        _lastTouched = @"WATER";
+        [self.fusionPower addPower:node.name];
+        NSLog(@"Shot WATER");
     }
     
-    if ([node.name isEqualToString:@"EARTH"])
+    if ([node.name isEqualToString:@"EARTH"] && ![_lastTouched isEqualToString:@"EARTH"])
     {
-        NSLog(@"=== EARTH SPELL ===");
+        [self shotSmall];
+        _lastTouched = @"EARTH";
+        [self.fusionPower addPower:node.name];
+        NSLog(@"Shot EARTH");
     }
     
-    if ([node.name isEqualToString:@"SHOT"])
+    if ([node.name isEqualToString:@"LIGHTNING"] && ![_lastTouched isEqualToString:@"LIGHTNING"])
     {
-        [self.fusionPower shotPower];
+        [self shotSmall];
+        _lastTouched = @"LIGHTNING";
+        [self.fusionPower addPower:node.name];
+        NSLog(@"Shot LIGHTNING");
+    }
+    
+    if ([node.name isEqualToString:@"SHOT1"] && ![_lastTouched isEqualToString:@"SHOT1"])
+    {
+        [self shotSmall];
+        _lastTouched = @"SHOT1";
+        [UIView animateWithDuration:0.1 animations:^
+         {
+             [node setScale:1.04];
+             [node setAlpha:0.7];
+         }];
+    }
+    
+    if ([node.name isEqualToString:@"SHOT2"] && ![_lastTouched isEqualToString:@"SHOT2"])
+    {
+        [self shotSmall];
+        _lastTouched = @"SHOT2";
+        [UIView animateWithDuration:0.1 animations:^
+         {
+             [node setScale:1.04];
+             [node setAlpha:0.7];
+         }];
+    }
+    
+    if ([node.name isEqualToString:@"SHOT3"] && ![_lastTouched isEqualToString:@"SHOT3"])
+    {
+        [self shotSmall];
+        _lastTouched = @"SHOT3";
+        [UIView animateWithDuration:0.1 animations:^
+         {
+             [node setScale:1.04];
+             [node setAlpha:0.7];
+         }];
+    }
+    
+    if ([node.name isEqualToString:@"SHOT4"] && ![_lastTouched isEqualToString:@"SHOT4"])
+    {
+        [self shotSmall];
+        _lastTouched = @"SHOT4";
+        [UIView animateWithDuration:0.1 animations:^
+         {
+             [node setScale:1.04];
+             [node setAlpha:0.7];
+         }];
     }
 }
 
@@ -220,6 +328,7 @@
     
     if ([node.name isEqualToString:@"FIRE"] && ![_lastTouched isEqualToString:@"FIRE"])
     {
+        [self shotSmall];
         _lastTouched = @"FIRE";
         [self.fusionPower addPower:node.name];
         NSLog(@"Shot FIRE");
@@ -227,6 +336,7 @@
     
     if ([node.name isEqualToString:@"WATER"] && ![_lastTouched isEqualToString:@"WATER"])
     {
+        [self shotSmall];
         _lastTouched = @"WATER";
         [self.fusionPower addPower:node.name];
         NSLog(@"Shot WATER");
@@ -234,27 +344,95 @@
     
     if ([node.name isEqualToString:@"EARTH"] && ![_lastTouched isEqualToString:@"EARTH"])
     {
+        [self shotSmall];
         _lastTouched = @"EARTH";
         [self.fusionPower addPower:node.name];
         NSLog(@"Shot EARTH");
     }
     
-    if ([node.name isEqualToString:@"SHOT"] && ![_lastTouched isEqualToString:@"SHOT"])
-    {
-        _lastTouched = @"SHOT";
-    }
-    
     if ([node.name isEqualToString:@"LIGHTNING"] && ![_lastTouched isEqualToString:@"LIGHTNING"])
     {
+        [self shotSmall];
         _lastTouched = @"LIGHTNING";
         [self.fusionPower addPower:node.name];
         NSLog(@"Shot LIGHTNING");
     }
+    
+    if ([node.name isEqualToString:@"SHOT1"] && ![_lastTouched isEqualToString:@"SHOT1"])
+    {
+        [self shotSmall];
+        _lastTouched = @"SHOT1";
+        [UIView animateWithDuration:0.1 animations:^
+         {
+             [node setScale:1.04];
+             [node setAlpha:0.7];
+         }];
+    }
+    
+    if ([node.name isEqualToString:@"SHOT2"] && ![_lastTouched isEqualToString:@"SHOT2"])
+    {
+        [self shotSmall];
+        _lastTouched = @"SHOT2";
+        [UIView animateWithDuration:0.1 animations:^
+         {
+             [node setScale:1.04];
+             [node setAlpha:0.7];
+         }];
+    }
+    
+    if ([node.name isEqualToString:@"SHOT3"] && ![_lastTouched isEqualToString:@"SHOT3"])
+    {
+        [self shotSmall];
+        _lastTouched = @"SHOT3";
+        [UIView animateWithDuration:0.1 animations:^
+         {
+             [node setScale:1.04];
+             [node setAlpha:0.7];
+         }];
+    }
+    
+    if ([node.name isEqualToString:@"SHOT4"] && ![_lastTouched isEqualToString:@"SHOT4"])
+    {
+        [self shotSmall];
+        _lastTouched = @"SHOT4";
+        [UIView animateWithDuration:0.1 animations:^
+         {
+             [node setScale:1.04];
+             [node setAlpha:0.7];
+         }];
+    }
+}
+
+-(void)shotSmall
+{
+    [UIView animateWithDuration:0.1 animations:^
+     {
+         [_shootButton1 setScale:1];
+         [_shootButton1 setAlpha:0.25];
+     }];
+    [UIView animateWithDuration:0.1 animations:^
+     {
+         [_shootButton2 setScale:1];
+         [_shootButton2 setAlpha:0.25];
+     }];
+    [UIView animateWithDuration:0.1 animations:^
+     {
+         [_shootButton3 setScale:1];
+         [_shootButton3 setAlpha:0.25];
+     }];
+    [UIView animateWithDuration:0.1 animations:^
+     {
+         [_shootButton4 setScale:1];
+         [_shootButton4 setAlpha:0.25];
+     }];
+    
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+    [self shotSmall];
     [self.fusionPower shotPower];
+    _lastTouched = @"";
 }
 
 #pragma mark - Joystick Delegate
