@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3539346F18F70808007309BA /* lavaSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 3539346E18F70808007309BA /* lavaSymbol.png */; };
+		35F8025C18F71F0B007A445E /* lifeSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 35F8025B18F71F0B007A445E /* lifeSymbol.png */; };
+		35F8025E18F72123007A445E /* lightningSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 35F8025D18F72123007A445E /* lightningSymbol.png */; };
 		5B7D5ACA18F4869300A50B00 /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC618F4869300A50B00 /* bird.atlas */; };
 		5B7D5ACB18F4869300A50B00 /* redWarrior.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC718F4869300A50B00 /* redWarrior.atlas */; };
 		5B7D5ACC18F4869300A50B00 /* swordWarrior.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC818F4869300A50B00 /* swordWarrior.atlas */; };
@@ -74,6 +77,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3539346E18F70808007309BA /* lavaSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lavaSymbol.png; sourceTree = "<group>"; };
+		35F8025B18F71F0B007A445E /* lifeSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lifeSymbol.png; sourceTree = "<group>"; };
+		35F8025D18F72123007A445E /* lightningSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightningSymbol.png; sourceTree = "<group>"; };
 		5B7D5AC618F4869300A50B00 /* bird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bird.atlas; sourceTree = "<group>"; };
 		5B7D5AC718F4869300A50B00 /* redWarrior.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = redWarrior.atlas; sourceTree = "<group>"; };
 		5B7D5AC818F4869300A50B00 /* swordWarrior.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = swordWarrior.atlas; sourceTree = "<group>"; };
@@ -178,6 +184,13 @@
 		35A3ABC718F46D2400E159C8 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				5BF2C93118F5BAF10005C38C /* MenuSegue.h */,
+				5BF2C93218F5BAF10005C38C /* MenuSegue.m */,
+				5BF2C93318F5BAF10005C38C /* MenuViewController.h */,
+				5BF2C93418F5BAF10005C38C /* MenuViewController.m */,
+				5BF2C93518F5BAF10005C38C /* NavViewController.h */,
+				5BF2C93618F5BAF10005C38C /* NavViewController.m */,
+				5BF2C92F18F5BADD0005C38C /* menuFundo.png */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -238,13 +251,6 @@
 				FFBEF0D218F461EE00006CFE /* Images */,
 				FFBEF05A18F3304400006CFE /* Main_iPhone.storyboard */,
 				FFBEF05D18F3304400006CFE /* Main_iPad.storyboard */,
-				5BF2C93118F5BAF10005C38C /* MenuSegue.h */,
-				5BF2C93218F5BAF10005C38C /* MenuSegue.m */,
-				5BF2C93318F5BAF10005C38C /* MenuViewController.h */,
-				5BF2C93418F5BAF10005C38C /* MenuViewController.m */,
-				5BF2C93518F5BAF10005C38C /* NavViewController.h */,
-				5BF2C93618F5BAF10005C38C /* NavViewController.m */,
-				5BF2C92F18F5BADD0005C38C /* menuFundo.png */,
 				FFBEF05718F3304400006CFE /* AppDelegate.h */,
 				FFBEF05818F3304400006CFE /* AppDelegate.m */,
 				FFBEF0A818F3309A00006CFE /* ViewController.h */,
@@ -340,11 +346,14 @@
 				5B7D5AC818F4869300A50B00 /* swordWarrior.atlas */,
 				5B7D5AC918F4869300A50B00 /* megaMan.atlas */,
 				FFBEF08618F3309A00006CFE /* blackButton.png */,
+				3539346E18F70808007309BA /* lavaSymbol.png */,
 				FFBEF08818F3309A00006CFE /* glassButtonBlue.png */,
 				FFBEF08918F3309A00006CFE /* glassButtonGreen.png */,
 				FFBEF08718F3309A00006CFE /* fireSymbol.png */,
+				35F8025B18F71F0B007A445E /* lifeSymbol.png */,
 				FFBEF09018F3309A00006CFE /* earthSymbol.png */,
 				FFBEF09318F3309A00006CFE /* waterSymbol.png */,
+				35F8025D18F72123007A445E /* lightningSymbol.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -430,7 +439,9 @@
 				FFBEF0CB18F3309A00006CFE /* Water.sks in Resources */,
 				5B7D5ACC18F4869300A50B00 /* swordWarrior.atlas in Resources */,
 				5B7D5ACD18F4869300A50B00 /* megaMan.atlas in Resources */,
+				35F8025E18F72123007A445E /* lightningSymbol.png in Resources */,
 				FFBEF0BB18F3309A00006CFE /* trees.png in Resources */,
+				35F8025C18F71F0B007A445E /* lifeSymbol.png in Resources */,
 				FFBEF0B618F3309A00006CFE /* spark.png in Resources */,
 				FFBEF0B818F3309A00006CFE /* stick_hold.png in Resources */,
 				FFBEF0AF18F3309A00006CFE /* blackButton.png in Resources */,
@@ -438,6 +449,7 @@
 				FFBEF06918F3304400006CFE /* Images.xcassets in Resources */,
 				FFBEF05F18F3304400006CFE /* Main_iPad.storyboard in Resources */,
 				FFBEF0B318F3309A00006CFE /* isometric_grass_and_water.png in Resources */,
+				3539346F18F70808007309BA /* lavaSymbol.png in Resources */,
 				FFBEF0CA18F3309A00006CFE /* map.tmx in Resources */,
 				5B7D5ACB18F4869300A50B00 /* redWarrior.atlas in Resources */,
 				FFBEF0B018F3309A00006CFE /* fireSymbol.png in Resources */,

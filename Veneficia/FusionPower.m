@@ -14,6 +14,7 @@
 @property (nonatomic) NSMutableDictionary *fusions;
 @property (nonatomic) SKNode *mapNode;
 @property (nonatomic) CGSize size;
+#define STACK_SIZE      2
 
 @end
 
@@ -51,9 +52,59 @@
 // fusion a power if needed
 //
 
-- (SKNode *)fusionOnTop:(SKNode *)top receiver:(SKNode *)receiver
+- (NSString *)fusion:(NSString *)receiver
 {
     // implementation
+    
+    if([receiver isEqualToString:@"FIRE"])
+    {
+        for(NSInteger i=0; i<_stack.count; i++)
+        {
+            SKNode *aux = _stack[i];
+            if([aux.name isEqualToString:@"EARTH"])
+            {
+                [_stack removeObject:aux];
+                [aux removeFromParent];
+                return @"LAVA";
+            }
+            
+        }
+    }
+    else if([receiver isEqualToString:@"EARTH"])
+    {
+        for(NSInteger i=0; i<_stack.count; i++)
+        {
+            SKNode *aux = _stack[i];
+            if([aux.name isEqualToString:@"FIRE"])
+            {
+                [_stack removeObject:aux];
+                [aux removeFromParent];
+                return @"LAVA";
+            }
+            if([aux.name isEqualToString:@"LIGHTNING"])
+            {
+                [_stack removeObject:aux];
+                [aux removeFromParent];
+                return @"LIFE";
+            }
+
+            
+        }
+    }
+    else if([receiver isEqualToString:@"LIGHTNING"])
+    {
+        for(NSInteger i=0; i<_stack.count; i++)
+        {
+            SKNode *aux = _stack[i];
+            if([aux.name isEqualToString:@"EARTH"])
+            {
+                [_stack removeObject:aux];
+                [aux removeFromParent];
+                return @"LIFE";
+            }
+            
+        }
+    }
     return receiver;
 }
 
@@ -61,25 +112,34 @@
 // RECEIVE A TYPE OF POWER
 //
 
-- (void)addPower:(SKNode *)powerName
+- (void)addPower:(NSString *)powerName
 {
-    SKNode *lastNode = [_stack lastObject];
-    
-    // Empty Stack
-    if (lastNode == nil)
+    if (_stack.count != STACK_SIZE)
     {
-        [_stack addObject:[powerName copy]];
+        SKNode *lastNode = [_stack lastObject];
+        
+        // Empty Stack
+        if (lastNode == nil)
+        {
+            [self createPower:powerName];
+        }
+        else
+        {
+            NSString *newPower = [self fusion:powerName];
+            [self createPower:newPower];
+            
+        }
+        
     }
-    else if (![lastNode.name isEqualToString:powerName.name])
+    else
     {
-        SKNode *newPower = [self fusionOnTop:lastNode receiver:powerName];
-        [_stack addObject:[newPower copy]];
+        NSString *newPower = [self fusion:powerName];
+        if (newPower != powerName) //FUSION OCURRED
+        {
+            [self createPower:newPower];
+        }
     }
     
-    [self fixLastNodePosition];
-    lastNode = [_stack lastObject];
-    [lastNode removeFromParent];
-    [_mapNode addChild:lastNode]; //[_stack lastObject]];
 }
 
 - (void)fixLastNodePosition
@@ -111,6 +171,77 @@
     [_stack removeAllObjects];
     
     return nil;
+}
+
+- (void)createPower: (NSString *)powerName
+{
+    if([powerName isEqualToString:@"FIRE"])
+    {
+        SKSpriteNode *fireNode = [[SKSpriteNode alloc] initWithImageNamed:@"fireSymbol"];
+        fireNode.position = CGPointMake(_size.width - 140, 200);
+        fireNode.name = @"FIRE";
+        fireNode.zPosition = 1.0;
+        fireNode.size = CGSizeMake(50, 50);
+        [_mapNode addChild:fireNode];
+        [_stack addObject:fireNode];
+    }
+    
+    else if([powerName isEqualToString:@"WATER"])
+    {
+        SKSpriteNode *waterNode = [[SKSpriteNode alloc] initWithImageNamed:@"waterSymbol"];
+        waterNode.position = CGPointMake(_size.width - 220, 120);
+        waterNode.name = @"WATER";
+        waterNode.zPosition = 1.0;
+        waterNode.size = CGSizeMake(50, 50);
+        [_mapNode addChild:waterNode];
+        [_stack addObject:waterNode];
+    }
+    
+    else if([powerName isEqualToString:@"EARTH"])
+    {
+        SKSpriteNode *earthNode = [[SKSpriteNode alloc] initWithImageNamed:@"earthSymbol"];
+        earthNode.position = CGPointMake(_size.width - 60, 120);
+        earthNode.name = @"EARTH";
+        earthNode.zPosition = 1.0;
+        earthNode.size = CGSizeMake(50, 50);
+        [_mapNode addChild:earthNode];
+        [_stack addObject:earthNode];
+    }
+    
+    else if([powerName isEqualToString:@"LAVA"])
+    {
+        SKSpriteNode *lavaNode = [[SKSpriteNode alloc] initWithImageNamed:@"lavaSymbol"];
+        lavaNode.position = CGPointMake(_size.width - 140, 120);
+        lavaNode.name = @"LAVA";
+        lavaNode.zPosition = 1.0;
+        lavaNode.size = CGSizeMake(50, 50);
+        [_mapNode addChild:lavaNode];
+        [_stack addObject:lavaNode];
+    }
+    
+    else if([powerName isEqualToString:@"LIFE"])
+    {
+        SKSpriteNode *lifeNode = [[SKSpriteNode alloc] initWithImageNamed:@"lifeSymbol"];
+        lifeNode.position = CGPointMake(_size.width - 140, 120);
+        lifeNode.name = @"LIFE";
+        lifeNode.zPosition = 1.0;
+        lifeNode.size = CGSizeMake(50, 50);
+        [_mapNode addChild:lifeNode];
+        [_stack addObject:lifeNode];
+    }
+    
+    else if([powerName isEqualToString:@"LIGHTNING"])
+    {
+        SKSpriteNode *lavaNode = [[SKSpriteNode alloc] initWithImageNamed:@"lightningSymbol"];
+        lavaNode.position = CGPointMake(_size.width - 140, 120);
+        lavaNode.name = @"LIGHTNING";
+        lavaNode.zPosition = 1.0;
+        lavaNode.size = CGSizeMake(50, 50);
+        [_mapNode addChild:lavaNode];
+        [_stack addObject:lavaNode];
+    }
+    
+    [self fixLastNodePosition];
 }
 
 @end
