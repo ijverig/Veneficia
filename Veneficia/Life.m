@@ -20,7 +20,7 @@
         _amount = _initialAmount;
         
         _bar = [[SKShapeNode alloc] init];
-        _bar.path = [UIBezierPath bezierPathWithRect:CGRectMake(-28, -60, 50.0, 6.0)].CGPath;
+        _bar.path = [UIBezierPath bezierPathWithRect:CGRectMake(-25, -56, 50.0, 6.0)].CGPath;
         _bar.fillColor = SKColor.yellowColor;
         _bar.strokeColor = SKColor.orangeColor;
     }
@@ -30,7 +30,7 @@
 
 - (void)decreaseByAmount:(float)amount
 {
-    _amount -= amount;
+   _amount -= amount;
 
     if (_amount < 0)
     {
@@ -59,7 +59,7 @@
 
 - (void)updateBar
 {
-    _bar.path = [UIBezierPath bezierPathWithRect:CGRectMake(-28, -60, _amount * 0.05, 6.0)].CGPath;
+    _bar.path = [UIBezierPath bezierPathWithRect:CGRectMake(-25, -_bar.parent.frame.size.height / 2 - 6, _amount * 0.05, 6.0)].CGPath;
 }
 
 @end

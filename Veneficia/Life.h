@@ -8,7 +8,7 @@
 
 #import <SpriteKit/SpriteKit.h>
 
-@interface Life : SKNode
+@interface Life : NSObject
 
 @property (nonatomic) float initialAmount;
 @property (nonatomic) float amount;
