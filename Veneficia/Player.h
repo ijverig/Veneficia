@@ -20,4 +20,5 @@
              atlasName:(NSString *)atlasName
                   size:(CGSize)size;
 
+-(void) movePlayer:(CGPoint)dir;
 @end

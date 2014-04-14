@@ -125,10 +125,10 @@
     self.textureDOWN = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateDOWN];
     self.textureLEFT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateLEFT];
     self.textureRIGHT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateRIGHT];
-    self.textureUP_LEFT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateUP_LEFT];
-    self.textureUP_RIGHT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateUP_RIGHT];
-    self.textureDOWN_LEFT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateDOWN_LEFT];
-    self.textureDOWN_RIGHT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateDOWN_RIGHT];
+    self.textureUP_LEFT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateUP]; //IMPLEMENT HERE TO DO UP_LEFT, UP_RIGHT...
+    self.textureUP_RIGHT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateRIGHT];
+    self.textureDOWN_LEFT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateLEFT];
+    self.textureDOWN_RIGHT = [self generateTexturesArray:[self.atlas textureNames] withPredicate:predicateDOWN];
 }
 
 //

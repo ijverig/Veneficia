@@ -62,12 +62,141 @@
     [self setPosition:CGPointMake(newLeft, self.position.y)];
 }
 
+-(void) movePlayer:(CGPoint)dir
+{
+    [self setPosition:CGPointMake(self.position.x + self.velocity*dir.x, self.position.y - self.velocity*dir.y)];
+    
+    //////////////////////////////////
+    // Get the angle from the dir.y //
+    //////////////////////////////////
+    
+    NSInteger angleSum = 0;
+    float angle;
+    float norY;
+    float vecSize;
+    
+    // Get the normal and normalize Y
+    vecSize = sqrtf(dir.x * dir.x + dir.y * dir.y);
+    norY = -dir.y / vecSize;
+
+    // Get the partial angle
+    angle = asinf(norY)/ M_PI * 180.0;
+    
+    // Correct the angle using the x position
+    if(dir.x < 0)
+    {
+        angle = 180.0 - angle;
+    }
+    
+    // Correct the angle using the forth quadrant
+    if(dir.x > 0 && -dir.y < 0)
+    {
+        angle += 360;
+    }
+    
+    // Done!
+    
+    //////////////////////////////////
+    //////////////////////////////////
+    //////////////////////////////////
+    
+    //NSLog(@"Angle: %f", angle);
+    if (![self hasActions])
+    {
+        // Rigth
+        angleSum = 0;
+        if(angle < angleSum + 22.5 && angle > angleSum - 22.5)
+        {
+            [self runAction:[SKAction sequence:@[self.actionRIGHT]]];
+            self.direction = RIGHT;
+        }
+        
+        // Increment the angle sum
+        angleSum += 45;
+        
+        //Up Right
+        if(angle < angleSum + 22.5 && angle > angleSum - 22.5)
+        {
+            [self runAction:[SKAction sequence:@[self.actionUP_RIGHT]]];
+            self.direction = UP_RIGHT;
+            
+        }
+        
+        angleSum+=45;
+        
+        //Up
+        if(angle < angleSum + 22.5 && angle > angleSum - 22.5)
+        {
+            [self runAction:[SKAction sequence:@[self.actionUP]]];
+            self.direction = UP;
+            
+        }
+        
+        // Increment the angle sum
+        angleSum += 45;
+        
+        //Up Left
+        if(angle < angleSum + 22.5 && angle > angleSum - 22.5)
+        {
+            [self runAction:[SKAction sequence:@[self.actionUP_LEFT]]];
+            self.direction = UP_LEFT;
+            
+        }
+        
+        // Increment the angle sum
+        angleSum += 45;
+        
+        //Left
+        if(angle < angleSum + 22.5 && angle > angleSum - 22.5)
+        {
+            [self runAction:[SKAction sequence:@[self.actionLEFT]]];
+            self.direction = LEFT;
+            
+        }
+        
+        // Increment the angle sum
+        angleSum += 45;
+        
+        //Down Left
+        if(angle < angleSum + 22.5 && angle > angleSum - 22.5)
+        {
+            [self runAction:[SKAction sequence:@[self.actionDOWN_LEFT]]];
+            self.direction = DOWN_LEFT;
+            
+        }
+        
+        // Increment the angle sum
+        angleSum += 45;
+        
+        //Down
+        if(angle < angleSum + 22.5 && angle > angleSum - 22.5)
+        {
+            [self runAction:[SKAction sequence:@[self.actionDOWN]]];
+            self.direction = DOWN;
+            
+        }
+        
+        // Increment the angle sum
+        angleSum += 45;
+        
+        //Down Right
+        if(angle < angleSum + 22.5 && angle > angleSum - 22.5)
+        {
+            [self runAction:[SKAction sequence:@[self.actionDOWN_RIGHT]]];
+            self.direction = DOWN_RIGHT;
+            
+        }
+        
+    }
+}
+
 - (void)Right
 {
     float newRight = self.position.x + self.velocity;
     
     if (![self hasActions])
     {
+        //if (dir.x)
         [self runAction:[SKAction sequence:@[self.actionRIGHT]]];
         self.direction = RIGHT;
     }

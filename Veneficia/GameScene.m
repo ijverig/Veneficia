@@ -438,26 +438,27 @@
 #pragma mark - Joystick Delegate
 
 - (void)joystick:(Joystick *)aJoystick didUpdate:(CGPoint)dir
-{    
-    if (dir.x > 0.5)
-    {
-        [self.redWarrior Right];
-    }
-    
-    if (dir.x < -0.5)
-    {
-        [self.redWarrior Left];
-    }
-    
-    if (dir.y > 0.5)
-    {
-        [self.redWarrior Down];
-    }
-    
-    if (dir.y < -0.5)
-    {
-        [self.redWarrior Up];
-    }
+{
+    [self.redWarrior movePlayer:dir];
+//    if (dir.x > 0)
+//    {
+//        [self.redWarrior Right];
+//    }
+//    
+//    if (dir.x < 0)
+//    {
+//        [self.redWarrior Left];
+//    }
+//    
+//    if (dir.y > 0)
+//    {
+//        [self.redWarrior Down];
+//    }
+//    
+//    if (dir.y < 0)
+//    {
+//        [self.redWarrior Up];
+//    }
 }
 
 #pragma mark - Camera Position
