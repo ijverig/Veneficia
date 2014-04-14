@@ -14,6 +14,7 @@
 @property (nonatomic) NSMutableDictionary *fusions;
 @property (nonatomic) SKNode *mapNode;
 @property (nonatomic) CGSize size;
+@property (nonatomic) Attack *attack;
 #define STACK_SIZE      2
 
 @end
@@ -153,16 +154,68 @@
 // clear the Stack
 //
 
-- (SKNode *)shotPower
+- (SKEmitterNode *)shotPower:(Player *) player
+{
+    _attack = [Attack shareAttackInstance];
+    NSInteger fire=0;
+    NSInteger earth=0;
+    NSInteger water=0;
+    NSInteger lightning=0;
+    NSInteger life=0;
+    NSInteger lava=0;
+    for (NSInteger i=0; i<_stack.count; i++)
+    {
+        SKNode *aux = _stack[i];
+        if([aux.name isEqualToString:@"FIRE"])
+            fire++;
+        if([aux.name isEqualToString:@"EARTH"])
+            earth++;
+        if([aux.name isEqualToString:@"WATER"])
+            water++;
+        if([aux.name isEqualToString:@"LIGHTNING"])
+            lightning++;
+        if([aux.name isEqualToString:@"LIFE"])
+            life++;
+        if([aux.name isEqualToString:@"LAVA"])
+            lava++;
+    }
+    
+    if(fire==2)
+    {
+        SKEmitterNode *node=[_attack createFireAttackBy:player];
+        [self cleanStack];
+        return node;
+    }
+    else if(fire==1)
+    {
+        SKEmitterNode *node=[_attack createFireAttackBy:player];
+        [self cleanStack];
+        return node;
+    }
+    else if(water==1)
+    {
+        SKEmitterNode *node=[_attack createWaterAttackBy:player];
+        [self cleanStack];
+        return node;
+    }
+    else if(water==2)
+    {
+        SKEmitterNode *node=[_attack createWaterAttackBy:player];
+        [self cleanStack];
+        return node;
+    }
+    
+    [self cleanStack];
+    return nil;
+}
+
+-(void)cleanStack
 {
     for (SKNode *node in _stack)
         [node removeFromParent];
     
     [_stack removeAllObjects];
-    
-    return nil;
 }
-
 - (void)createPower: (NSString *)powerName
 {
     if([powerName isEqualToString:@"FIRE"])

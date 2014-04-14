@@ -31,30 +31,31 @@
     return [self shareAttackInstance];
 }
 
-- (MagicPower *)createFireAttackBy:(Character *)character;
+- (SKEmitterNode *)createFireAttackBy:(Character *)character;
 {
     NSString *fireRayPath = [[NSBundle mainBundle] pathForResource:@"FireRay" ofType:@"sks"];
-    MagicPower *fire = (MagicPower *)[NSKeyedUnarchiver unarchiveObjectWithFile:fireRayPath];
+    SKEmitterNode *fire = [NSKeyedUnarchiver unarchiveObjectWithFile:fireRayPath];
 //    fire.name = @"FIRE";
 //    fire.sourcePlayer = [character.name copy];
 //    fire.damage = character.attack;
-    fire.position  = character.position;
+    //fire.userData
+    fire.particlePosition  = character.position;
     [self direction:character.direction ofAttack:fire andRange:1000];
     return fire;
 }
 
-- (MagicPower *)createWaterAttackBy:(Character *)character;
+- (SKEmitterNode *)createWaterAttackBy:(Character *)character;
 {
     NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"Water" ofType:@"sks"];
     SKNode *node = (SKNode *)[NSKeyedUnarchiver unarchiveObjectWithFile:waterPath];
-    MagicPower *water = (MagicPower *)node; //[NSKeyedUnarchiver unarchiveObjectWithFile:waterPath];
+    SKEmitterNode *water = node; //[NSKeyedUnarchiver unarchiveObjectWithFile:waterPath];
     water.name = @"WATER";
 //    water.sourcePlayer = @"opa";
 //    NSLog(@"Name: %@ %@", character.name, water.sourcePlayer);
    
 //    water.sourcePlayer = [character.name mutableCopy];
 //    water.damage = character.attack;
-    water.position  = character.position;
+    water.particlePosition  = character.position;
     [self direction:character.direction ofAttack:water andRange:1000];
     
     return water;
@@ -67,7 +68,7 @@
 // RANGE IS HOW FAR THE MAGIC REACHES
 //
 
-- (void)direction:(NSInteger)direction ofAttack:(MagicPower *)power andRange:(float)range
+- (void)direction:(NSInteger)direction ofAttack:(SKEmitterNode *)power andRange:(float)range
 {
     switch (direction)
     {
@@ -79,7 +80,7 @@
         
         case DOWN:
             power.emissionAngle = M_PI/2;
-            [power runAction:[SKAction sequence:@[[SKAction moveToY:range duration:1.0],
+            [power runAction:[SKAction sequence:@[[SKAction moveToY:-range duration:1.0],
                                                   [SKAction removeFromParent]]]];
             break;
       
@@ -95,17 +96,27 @@
             break;
         
         case UP_LEFT:
-            [power runAction:[SKAction sequence:@[[SKAction moveByX:-range y:-range duration:1.0],
+            power.emissionAngle = -M_PI/4;
+            [power runAction:[SKAction sequence:@[[SKAction moveByX:-range y:range duration:1.0],
                                                   [SKAction removeFromParent]]]];
             break;
         
         case UP_RIGHT:
+            power.emissionAngle = -3*M_PI/4;
+            [power runAction:[SKAction sequence:@[[SKAction moveByX:range y:range duration:1.0],
+                                                  [SKAction removeFromParent]]]];
             break;
             
         case DOWN_RIGHT:
+            power.emissionAngle = 3*M_PI/4;
+            [power runAction:[SKAction sequence:@[[SKAction moveByX:range y:-range duration:1.0],
+                                                  [SKAction removeFromParent]]]];
             break;
         
         case DOWN_LEFT:
+            power.emissionAngle = M_PI/4;
+            [power runAction:[SKAction sequence:@[[SKAction moveByX:-range y:-range duration:1.0],
+                                                  [SKAction removeFromParent]]]];
             break;
     }
 }

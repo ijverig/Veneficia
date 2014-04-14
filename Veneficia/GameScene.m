@@ -431,7 +431,9 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self shotSmall];
-    [self.fusionPower shotPower];
+    SKEmitterNode *attack = [self.fusionPower shotPower:self.redWarrior];
+    if (attack!=nil)
+        [self.map addChild:attack];
     _lastTouched = @"";
 }
 

@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "MagicPower.h"
+#import "Attack.h"
+#import "Player.h"
 
 @interface FusionPower : NSObject
 
 - (id)initWithSizeofScreen:(CGSize)size andMap:(SKNode *)map;
 - (void)addPower:(NSString *)powerName;
-- (SKNode *)shotPower;
+- (SKEmitterNode *)shotPower:(Player *) player;
 - (NSMutableArray *)showPower;
 
 @end
