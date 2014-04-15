@@ -60,8 +60,36 @@
                 p.userData[@"DIRECTION"] = @"RIGHT";
         }
     }
-    //    NSLog(@"Begin ContactA %@",contact.bodyA.node.name);
-    //    NSLog(@"Begin ContactB %@",contact.bodyB.node.name);
+    
+
+    if ([contact.bodyB.node.name isEqualToString:@"FIRE"] ||
+        [contact.bodyB.node.name isEqualToString:@"WATER"] ||
+        [contact.bodyB.node.name isEqualToString:@"LIGHTING"] ||
+        [contact.bodyB.node.name isEqualToString:@"LAVA"]
+        )
+    {
+        if ([contact.bodyA.node isEqual:self.redWarrior])
+        {
+            SKNode * node = contact.bodyB.node;
+            NSLog(@"rerirada: %@", node.userData[@"damage"] );
+            [self.redWarrior decreaseLifeByAmount:[node.userData[@"damage"] integerValue]];
+        }
+        
+        
+        
+        
+        if ([contact.bodyA.node.name rangeOfString:@"Enemy"].location != NSNotFound)
+        {
+            Player *node = (Player*)contact.bodyA.node;
+            SKNode *nodeMagic = contact.bodyB.node;
+            [node decreaseLifeByAmount: [nodeMagic.userData[@"damage"] integerValue]];
+        }
+    
+    }
+    
+    
+        NSLog(@"Begin ContactA %@",contact.bodyA.node.name);
+        NSLog(@"Begin ContactB %@",contact.bodyB.node.name);
     
     
     
@@ -208,8 +236,8 @@
         self.redWarrior.zPosition = -101.0;
         self.redWarrior.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.redWarrior.size];
         self.redWarrior.physicsBody.categoryBitMask = GOOD_GUY;
-        self.redWarrior.physicsBody.contactTestBitMask = BAD_GUY | DOODADS | POWER;
-        self.redWarrior.physicsBody.collisionBitMask = BAD_GUY | DOODADS | POWER;
+        self.redWarrior.physicsBody.contactTestBitMask = BAD_GUY | DOODADS;
+        self.redWarrior.physicsBody.collisionBitMask = BAD_GUY | DOODADS;
         self.redWarrior.physicsBody.allowsRotation = NO;
         self.redWarrior.physicsBody.usesPreciseCollisionDetection = YES;
         
@@ -428,20 +456,20 @@
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self shotSmall];
-    SKEmitterNode *attack = [self.fusionPower shotPower:self.redWarrior];
+    SKNode *attack = [self.fusionPower shotPower:self.redWarrior];
     
     
     if (attack!=nil){
         [self.map addChild:attack];
-        NSLog(@"enter here");
         // Particula colisao
-        attack.zPosition = -101.0;
-    
-        attack.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100, 100)];
-        attack.physicsBody.categoryBitMask = POWER;
-        attack.physicsBody.contactTestBitMask = GOOD_GUY | BAD_GUY | DOODADS;
-        attack.physicsBody.collisionBitMask = GOOD_GUY | BAD_GUY | DOODADS;
-        attack.physicsBody.allowsRotation = NO;
+        SKEmitterNode *e = attack.children[0];
+        [e setScale:0.8];
+        e.zPosition = -101.0;
+        e.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(20, 20)];
+        e.physicsBody.categoryBitMask = POWER;
+        e.physicsBody.contactTestBitMask = BAD_GUY | DOODADS ;
+        e.physicsBody.collisionBitMask =  BAD_GUY | DOODADS ;
+        e.physicsBody.allowsRotation = NO;
   //      attack.physicsBody.usesPreciseCollisionDetection = YES;
     }
 
@@ -484,6 +512,7 @@
     [self centerOnNode:self.redWarrior];
 
     [self.horde logicHorder:self.redWarrior];
+    
     
     //    [self dummyEnemy];
     //    [self dummyAttackAndHeal];

@@ -15,7 +15,7 @@
 
 - (id)initWithSizeofScreen:(CGSize)size andMap:(SKNode *)map;
 - (void)addPower:(NSString *)powerName;
-- (SKEmitterNode *)shotPower:(Player *) player;
+- (SKNode *)shotPower:(Player *) player;
 - (NSMutableArray *)showPower;
 
 @end

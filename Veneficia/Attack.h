@@ -17,6 +17,6 @@
 @property(nonatomic) JSTileMap *map;
 
 + (instancetype)shareAttackInstance;
-- (SKEmitterNode *)createAttackBy:(Character *)character andPower:(NSString *)power;
+- (SKNode *)createAttackBy:(Character *)character andPower:(NSString *)power;
 
 @end

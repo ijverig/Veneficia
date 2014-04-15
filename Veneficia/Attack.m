@@ -31,17 +31,25 @@
     return [self shareAttackInstance];
 }
 
-- (SKEmitterNode *)createAttackBy:(Character *)character andPower:(NSString *)power
+- (SKNode *)createAttackBy:(Character *)character andPower:(NSString *)power
 {
     NSString *elementPath = [[NSBundle mainBundle] pathForResource:power ofType:@"sks"];
     SKEmitterNode *attack = [NSKeyedUnarchiver unarchiveObjectWithFile:elementPath];
+    
+    SKSpriteNode *node = [[SKSpriteNode alloc] initWithColor:[UIColor clearColor] size:CGSizeMake(10, 10)];
+    [node addChild:attack];
     attack.name = power;
+    
 //    fire.sourcePlayer = [character.name copy];
 //    fire.damage = character.attack;
     //fire.userData
-    attack.particlePosition  = character.position;
-    [self direction:character.direction ofAttack:attack andRange:1000 andAngle:character.directionAngle];
-    return attack;
+
+//    attack.particlePosition  = character.position;
+    node.position = character.position;
+    [self direction:character.direction ofAttack:node andRange:1000 andAngle:character.directionAngle];
+   
+    
+    return node;
 }
 
 
@@ -53,7 +61,7 @@
 // RANGE IS HOW FAR THE MAGIC REACHES
 //
 
-- (void)direction:(NSInteger)direction ofAttack:(SKEmitterNode *)power andRange:(float)range andAngle: (float)angle
+- (void)direction:(NSInteger)direction ofAttack:(SKNode *)power andRange:(float)range andAngle: (float)angle
 {
     float sinn, coss;
     
@@ -65,7 +73,9 @@
     coss = cosf(angle);
     
     // Set the emission angle
-    power.emissionAngle = angle + M_PI;
+    SKEmitterNode *emmiter = [power.children lastObject];
+    
+    emmiter.emissionAngle = angle + M_PI;
     [power runAction:[SKAction sequence:@[[SKAction moveByX:coss * range y:sinn * range duration:1.0],
                                           [SKAction removeFromParent]]]];
 }

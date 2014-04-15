@@ -44,7 +44,7 @@
                                                          mapBounds.size.height / 2 + 200 * (i + 1))
                                         name:[[NSString alloc] initWithFormat:@"%@%d",name,i]
                                    direction:DOWN
-                            life:1000
+                            life:2000
                             velocity:10
                             attack:100
                             defense:100
@@ -68,11 +68,29 @@
 
 -(void) logicHorder:(Player*) player
 {
+  /*
+    Player *temp = nil;
+    for (Player *p in self.hordeEnemies)
+    {
+        if (![p isAlive])
+        {
+            temp = p;
+            break;
+        }
+    }
+    
+    if (temp != nil)
+    {
+        [self.hordeEnemies removeObject:temp];
+        [temp removeFromParent];
+    }
+*/    
+    
     for (Player *p in self.hordeEnemies)
     {
         int aleatorio = arc4random_uniform(50);
        // float distance = [self distanceBetweenPlayer:player andEnemy:p];
-        float angle = player.directionAngle;
+      //   float angle = player.directionAngle;
         
         if (aleatorio > 0 && aleatorio  < 10)
         {
@@ -83,38 +101,22 @@
             [p movePlayer:CGPointMake( .4,  0)];
         }else if( aleatorio >= 30 && aleatorio < 40 ){
             [p movePlayer:CGPointMake( -0.1,  -.4)];
-        }else if ( aleatorio > 40 ){
+        }else if ( aleatorio > 45 ){
             self.attack = [Attack shareAttackInstance];
-            SKEmitterNode *node = [self.attack createFireAttackBy:p];
-        //    [self.map addChild:node];
+            SKNode *node = [self.attack createAttackBy:p andPower:@"FIRE"];
+            node.userData = [[NSMutableDictionary alloc] init];
+            [node.userData setValue:@"50" forKey:@"damage"];
+            node.name = @"FIRE";
+            node.zPosition = -101.0;
+            node.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(20, 20)];
+            node.physicsBody.categoryBitMask = POWER;
+            node.physicsBody.contactTestBitMask = GOOD_GUY | DOODADS ;
+            node.physicsBody.collisionBitMask =  GOOD_GUY | DOODADS ;
+            node.physicsBody.allowsRotation = NO;
+            
+            [self.map addChild:node];
         }
-        
-        
-//        switch (aleatorio)
-//        {
-//            case 1:
-//                [p movePlayer:CGPointMake( -.4,  .1)];
-//                break;
-//            case 2:
-//                [p movePlayer:CGPointMake( .4,  -.1)];
-//                break;
-//            case 3:
-//                [p movePlayer:CGPointMake( -.5,  .7)];
-//                break;
-//            case 4:
-//                [p movePlayer:CGPointMake( .8,  0)];
-//                break;
-//            case 5:
-//                [p movePlayer:CGPointMake( 0.0,  -.8)];
-//                break;
-//                
-//            default:
-//                break;
-//        }
-        
-        
-        
-        
+
     }
     
 }
