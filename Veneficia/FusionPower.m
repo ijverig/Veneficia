@@ -17,6 +17,7 @@
 @property (nonatomic) NSMutableDictionary *fusions;
 @property (nonatomic) SKNode *mapNode;
 @property (nonatomic) CGSize size;
+@property (nonatomic) Attack *attack;
 
 @end
 

@@ -66,8 +66,9 @@
     for (Player *p in self.hordeEnemies)
     {
         float distance = [self distanceBetweenPlayer:player andEnemy:p];
-        NSLog(@"Distance: %f",distance);
-        NSLog(@" %f", player.position.x / [self.map calculateAccumulatedFrame].size.width );
+//        NSLog(@"Distance: %f",distance);
+//        NSLog(@" %f", player.position.x / [self.map calculateAccumulatedFrame].size.width );
+
         // Run From Player
         if (distance < 300)
         {
@@ -97,27 +98,37 @@
         if (distance > 450)
         {
             
-            
-            CGPoint derivatePoint = CGPointMake( (player.position.x - p.position.x) / 100, (player.position.y - p.position.y) / 100 );
-            [p runAction:[SKAction moveTo:derivatePoint duration:1.0]];
+//            float directionX;
+//            float directionY;
+//            if (player.position.x > p.position.x)
+//                directionX = player.position.x - p.position.x;
+//            else
+//                directionX = p.position.x - player.position.x;
+//            
+//            if (player.position.y > p.position.y)
+//                directionY = player.position.y - p.position.y;
+//            else
+//                directionY = p.position.y - player.position.y;
+//            
+//            NSLog(@"Directionx:%f Directiony:%f", directionX, directionY);
+//            
+//            CGPoint derivatePoint = CGPointMake( directionX / 10000, directionY / 10000 );
+//            [p runAction:[SKAction moveTo:derivatePoint duration:1.0]];
             
 
-            
-            
-            
-//            if (player.direction == LEFT)
-//            {
-//                [p movePlayer:CGPointMake( -0.4, .1)];
-//            }else if (player.direction == RIGHT)
-//            {
-//                [p movePlayer:CGPointMake( 0.1, .04)];
-//            }else if (player.direction == UP || player.direction == UP_LEFT || player.direction == UP_RIGHT)
-//            {
-//                [p movePlayer:CGPointMake( 0.1, -0.4)];
-//            }else if (player.direction == DOWN || player.direction == DOWN_LEFT || player.direction == DOWN_RIGHT)
-//            {
-//                [p movePlayer:CGPointMake( -0.1, .4)];
-//            }
+            if (player.direction == LEFT)
+            {
+                [p movePlayer:CGPointMake( -0.4, .1)];
+            }else if (player.direction == RIGHT)
+            {
+                [p movePlayer:CGPointMake( 0.1, .04)];
+            }else if (player.direction == UP || player.direction == UP_LEFT || player.direction == UP_RIGHT)
+            {
+                [p movePlayer:CGPointMake( 0.1, -0.4)];
+            }else if (player.direction == DOWN || player.direction == DOWN_LEFT || player.direction == DOWN_RIGHT)
+            {
+                [p movePlayer:CGPointMake( -0.1, .4)];
+            }
             
         }
         

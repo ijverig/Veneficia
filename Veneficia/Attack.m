@@ -35,7 +35,7 @@
 {
     NSString *fireRayPath = [[NSBundle mainBundle] pathForResource:@"FireRay" ofType:@"sks"];
     SKEmitterNode *fire = [NSKeyedUnarchiver unarchiveObjectWithFile:fireRayPath];
-//    fire.name = @"FIRE";
+    fire.name = @"FIRE";
 //    fire.sourcePlayer = [character.name copy];
 //    fire.damage = character.attack;
     //fire.userData
@@ -48,7 +48,7 @@
 {
     NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"Water" ofType:@"sks"];
     SKNode *node = (SKNode *)[NSKeyedUnarchiver unarchiveObjectWithFile:waterPath];
-    SKEmitterNode *water = node; //[NSKeyedUnarchiver unarchiveObjectWithFile:waterPath];
+    SKEmitterNode *water = node; 
     water.name = @"WATER";
 //    water.sourcePlayer = @"opa";
 //    NSLog(@"Name: %@ %@", character.name, water.sourcePlayer);
