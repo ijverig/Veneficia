@@ -29,6 +29,7 @@
 // character properties
 @property (nonatomic) CGPoint position;
 @property (nonatomic) float direction;
+@property (nonatomic) float directionAngle;
 @property (nonatomic) Life *life;
 @property (nonatomic) float velocity;
 @property (nonatomic) float attack;

@@ -86,13 +86,17 @@
     }
     
     // Done!
+    if(dir.x != 0 && dir.y != 0)
+    {
+        self.directionAngle = angle;
+    }
     
     //NSLog(@"Angle: %f", angle);
     if (![self hasActions])
     {
         // Rigth
         angleSum = 0;
-        if(angle < angleSum + 22.5 && angle > angleSum - 22.5)
+        if(angle < angleSum + 22.5 && angle > 360 - 22.5)
         {
             [self runAction:[SKAction sequence:@[self.actionRIGHT]]];
             self.direction = RIGHT;

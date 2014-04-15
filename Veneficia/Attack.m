@@ -42,7 +42,7 @@
     //fire.userData
     
     fire.particlePosition  = character.position;
-    [self direction:character.direction ofAttack:fire andRange:1000];
+    [self direction:character.direction ofAttack:fire andRange:1000 andAngle:character.directionAngle];
     return fire;
 }
 
@@ -61,7 +61,7 @@
     
     
     water.particlePosition  = character.position;
-    [self direction:character.direction ofAttack:water andRange:1000];
+    [self direction:character.direction ofAttack:water andRange:1000 andAngle:character.directionAngle];
     
     return water;
 }
@@ -73,57 +73,21 @@
 // RANGE IS HOW FAR THE MAGIC REACHES
 //
 
-- (void)direction:(NSInteger)direction ofAttack:(SKEmitterNode *)power andRange:(float)range
+- (void)direction:(NSInteger)direction ofAttack:(SKEmitterNode *)power andRange:(float)range andAngle: (float)angle
 {
-    switch (direction)
-    {
-        case UP:
-            power.emissionAngle = -M_PI/2;
-            [power runAction:[SKAction sequence:@[[SKAction moveToY:range duration:1.0],
-                                                  [SKAction removeFromParent]]]];
-            break;
-        
-        case DOWN:
-            power.emissionAngle = M_PI/2;
-            [power runAction:[SKAction sequence:@[[SKAction moveToY:-range duration:1.0],
-                                                  [SKAction removeFromParent]]]];
-            break;
-      
-        case LEFT:
-            power.emissionAngle = 0;
-            [power runAction:[SKAction sequence:@[ [SKAction moveToX:-range duration:1.0],
-                                                   [SKAction removeFromParent]]]];
-            break;
-        
-        case RIGHT:
-            [power runAction:[SKAction sequence:@[[SKAction moveToX:range duration:1.0],
-                                                         [SKAction removeFromParent]]]];
-            break;
-        
-        case UP_LEFT:
-            power.emissionAngle = -M_PI/4;
-            [power runAction:[SKAction sequence:@[[SKAction moveByX:-range y:range duration:1.0],
-                                                  [SKAction removeFromParent]]]];
-            break;
-        
-        case UP_RIGHT:
-            power.emissionAngle = -3*M_PI/4;
-            [power runAction:[SKAction sequence:@[[SKAction moveByX:range y:range duration:1.0],
-                                                  [SKAction removeFromParent]]]];
-            break;
-            
-        case DOWN_RIGHT:
-            power.emissionAngle = 3*M_PI/4;
-            [power runAction:[SKAction sequence:@[[SKAction moveByX:range y:-range duration:1.0],
-                                                  [SKAction removeFromParent]]]];
-            break;
-        
-        case DOWN_LEFT:
-            power.emissionAngle = M_PI/4;
-            [power runAction:[SKAction sequence:@[[SKAction moveByX:-range y:-range duration:1.0],
-                                                  [SKAction removeFromParent]]]];
-            break;
-    }
+    float sinn, coss;
+    
+    // Correct the angle
+    angle = angle / 180.0 * M_PI;
+    
+    // Set the sin and the cos
+    sinn = sinf(angle);
+    coss = cosf(angle);
+    
+    // Set the emission angle
+    power.emissionAngle = angle + M_PI;
+    [power runAction:[SKAction sequence:@[[SKAction moveByX:coss * range y:sinn * range duration:1.0],
+                                          [SKAction removeFromParent]]]];
 }
 
 @end
