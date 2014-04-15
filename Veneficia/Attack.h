@@ -15,7 +15,7 @@
 @interface Attack : NSObject
 
 + (instancetype)shareAttackInstance;
-- (MagicPower *)createFireAttackBy:(Character *)character;
-- (MagicPower *)createWaterAttackBy:(Character *)character;
+- (SKEmitterNode *)createFireAttackBy:(Character *)character;
+- (SKEmitterNode *)createWaterAttackBy:(Character *)character;
 
 @end
