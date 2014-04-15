@@ -182,28 +182,88 @@
             lava++;
     }
     
-    if(fire==2)
+    if(fire==1)
     {
-        SKEmitterNode *node=[_attack createFireAttackBy:player];
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"FIRE"];
         [self cleanStack];
+        [node.userData setValue:@"50" forKey:@"damage"];
         return node;
     }
-    else if(fire==1)
+    else if(fire==2)
     {
-        SKEmitterNode *node=[_attack createFireAttackBy:player];
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"FIRE"];
         [self cleanStack];
+        [node.userData setValue:@"250" forKey:@"damage"];
         return node;
     }
     else if(water==1)
     {
-        SKEmitterNode *node=[_attack createWaterAttackBy:player];
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"WATER"];
         [self cleanStack];
+        [node.userData setValue:@"50" forKey:@"damage"];
         return node;
     }
     else if(water==2)
     {
-        SKEmitterNode *node=[_attack createWaterAttackBy:player];
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"WATER"];
         [self cleanStack];
+        [node.userData setValue:@"250" forKey:@"damage"];
+        return node;
+    }
+    else if(lightning==1)
+    {
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"LIGHTNING"];
+        [self cleanStack];
+        [node.userData setValue:@"50" forKey:@"damage"];
+        return node;
+    }
+    else if(lightning==2)
+    {
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"LIGHTNING"];
+        [self cleanStack];
+        [node.userData setValue:@"250" forKey:@"damage"];
+        return node;
+    }
+    else if(earth==1)
+    {
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"EARTH"];
+        [self cleanStack];
+        [node.userData setValue:@"50" forKey:@"damage"];
+        return node;
+    }
+    else if(earth==2)
+    {
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"EARTH"];
+        [self cleanStack];
+        [node.userData setValue:@"250" forKey:@"damage"];
+        return node;
+    }
+    else if(lava==1)
+    {
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"LAVA"];
+        [self cleanStack];
+        [node.userData setValue:@"400" forKey:@"damage"];
+        return node;
+    }
+    else if(lava==2)
+    {
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"LAVA"];
+        [self cleanStack];
+        [node.userData setValue:@"1000" forKey:@"damage"];
+        return node;
+    }
+    else if(life==1)
+    {
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"LIFE"];
+        [self cleanStack];
+        [node.userData setValue:@"400" forKey:@"damage"];
+        return node;
+    }
+    else if(life==2)
+    {
+        SKEmitterNode *node=[_attack createAttackBy:player andPower:@"LIFE"];
+        [self cleanStack];
+        [node.userData setValue:@"1000" forKey:@"damage"];
         return node;
     }
     

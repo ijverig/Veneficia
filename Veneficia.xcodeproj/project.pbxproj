@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3539032518FDA07800A4367B /* EARTH.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3539032118FDA07800A4367B /* EARTH.sks */; };
+		3539032618FDA07800A4367B /* FIRE.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3539032218FDA07800A4367B /* FIRE.sks */; };
+		3539032718FDA07800A4367B /* LIFE.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3539032318FDA07800A4367B /* LIFE.sks */; };
+		3539032818FDA07800A4367B /* LIGHTNING.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3539032418FDA07800A4367B /* LIGHTNING.sks */; };
 		3539346F18F70808007309BA /* lavaSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 3539346E18F70808007309BA /* lavaSymbol.png */; };
 		357D456818F85984007FDFAF /* quarter.png in Resources */ = {isa = PBXBuildFile; fileRef = 357D456718F85984007FDFAF /* quarter.png */; };
 		357D456A18F86BF0007FDFAF /* quarter 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 357D456918F86BF0007FDFAF /* quarter 2.png */; };
@@ -73,10 +77,10 @@
 		FFBEF0C318F3309A00006CFE /* LFCGzipUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF0A118F3309A00006CFE /* LFCGzipUtility.m */; };
 		FFBEF0C418F3309A00006CFE /* MagicPower.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF0A318F3309A00006CFE /* MagicPower.m */; };
 		FFBEF0C718F3309A00006CFE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FFBEF0A918F3309A00006CFE /* ViewController.m */; };
-		FFBEF0C818F3309A00006CFE /* FireRay.sks in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF0AA18F3309A00006CFE /* FireRay.sks */; };
+		FFBEF0C818F3309A00006CFE /* LAVA.sks in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF0AA18F3309A00006CFE /* LAVA.sks */; };
 		FFBEF0C918F3309A00006CFE /* isometric_grass_and_water.tmx in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF0AB18F3309A00006CFE /* isometric_grass_and_water.tmx */; };
 		FFBEF0CA18F3309A00006CFE /* map.tmx in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF0AC18F3309A00006CFE /* map.tmx */; };
-		FFBEF0CB18F3309A00006CFE /* Water.sks in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF0AD18F3309A00006CFE /* Water.sks */; };
+		FFBEF0CB18F3309A00006CFE /* WATER.sks in Resources */ = {isa = PBXBuildFile; fileRef = FFBEF0AD18F3309A00006CFE /* WATER.sks */; };
 		FFBEF0CD18F330FC00006CFE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FFBEF0CC18F330FC00006CFE /* libz.dylib */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +95,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3539032118FDA07800A4367B /* EARTH.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EARTH.sks; sourceTree = "<group>"; };
+		3539032218FDA07800A4367B /* FIRE.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FIRE.sks; sourceTree = "<group>"; };
+		3539032318FDA07800A4367B /* LIFE.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LIFE.sks; sourceTree = "<group>"; };
+		3539032418FDA07800A4367B /* LIGHTNING.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LIGHTNING.sks; sourceTree = "<group>"; };
 		3539346E18F70808007309BA /* lavaSymbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lavaSymbol.png; sourceTree = "<group>"; };
 		357D456718F85984007FDFAF /* quarter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quarter.png; sourceTree = "<group>"; };
 		357D456918F86BF0007FDFAF /* quarter 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quarter 2.png"; sourceTree = "<group>"; };
@@ -178,10 +186,10 @@
 		FFBEF0A418F3309A00006CFE /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		FFBEF0A818F3309A00006CFE /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		FFBEF0A918F3309A00006CFE /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		FFBEF0AA18F3309A00006CFE /* FireRay.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FireRay.sks; sourceTree = "<group>"; };
+		FFBEF0AA18F3309A00006CFE /* LAVA.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = LAVA.sks; sourceTree = "<group>"; };
 		FFBEF0AB18F3309A00006CFE /* isometric_grass_and_water.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = isometric_grass_and_water.tmx; sourceTree = "<group>"; };
 		FFBEF0AC18F3309A00006CFE /* map.tmx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = map.tmx; sourceTree = "<group>"; };
-		FFBEF0AD18F3309A00006CFE /* Water.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Water.sks; sourceTree = "<group>"; };
+		FFBEF0AD18F3309A00006CFE /* WATER.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = WATER.sks; sourceTree = "<group>"; };
 		FFBEF0CC18F330FC00006CFE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -355,8 +363,12 @@
 		FFBEF0CF18F4613500006CFE /* Spells */ = {
 			isa = PBXGroup;
 			children = (
-				FFBEF0AA18F3309A00006CFE /* FireRay.sks */,
-				FFBEF0AD18F3309A00006CFE /* Water.sks */,
+				3539032118FDA07800A4367B /* EARTH.sks */,
+				3539032218FDA07800A4367B /* FIRE.sks */,
+				3539032318FDA07800A4367B /* LIFE.sks */,
+				3539032418FDA07800A4367B /* LIGHTNING.sks */,
+				FFBEF0AA18F3309A00006CFE /* LAVA.sks */,
+				FFBEF0AD18F3309A00006CFE /* WATER.sks */,
 				FFBEF08D18F3309A00006CFE /* spark.png */,
 			);
 			name = Spells;
@@ -486,7 +498,7 @@
 				FFBEF0B218F3309A00006CFE /* glassButtonGreen.png in Resources */,
 				5B36F1E318FD7CD50022F8E7 /* map12.png in Resources */,
 				FFBEF0B118F3309A00006CFE /* glassButtonBlue.png in Resources */,
-				FFBEF0CB18F3309A00006CFE /* Water.sks in Resources */,
+				FFBEF0CB18F3309A00006CFE /* WATER.sks in Resources */,
 				5B7D5ACC18F4869300A50B00 /* swordWarrior.atlas in Resources */,
 				5B7D5ACD18F4869300A50B00 /* megaMan.atlas in Resources */,
 				35F8025E18F72123007A445E /* lightningSymbol.png in Resources */,
@@ -495,10 +507,12 @@
 				FFBEF0B618F3309A00006CFE /* spark.png in Resources */,
 				FFBEF0B818F3309A00006CFE /* stick_hold.png in Resources */,
 				FFBEF0AF18F3309A00006CFE /* blackButton.png in Resources */,
+				3539032518FDA07800A4367B /* EARTH.sks in Resources */,
 				FFBEF0B418F3309A00006CFE /* joy_thumb.png in Resources */,
 				FFBEF06918F3304400006CFE /* Images.xcassets in Resources */,
 				FFBEF05F18F3304400006CFE /* Main_iPad.storyboard in Resources */,
 				FFBEF0B318F3309A00006CFE /* isometric_grass_and_water.png in Resources */,
+				3539032718FDA07800A4367B /* LIFE.sks in Resources */,
 				3539346F18F70808007309BA /* lavaSymbol.png in Resources */,
 				5B36F1DF18FD7CD50022F8E7 /* map00.png in Resources */,
 				FFBEF0CA18F3309A00006CFE /* map.tmx in Resources */,
@@ -512,7 +526,7 @@
 				FFBEF0BC18F3309A00006CFE /* waterSymbol.png in Resources */,
 				5B36F1E618FD7CD50022F8E7 /* map22.png in Resources */,
 				357D456A18F86BF0007FDFAF /* quarter 2.png in Resources */,
-				FFBEF0C818F3309A00006CFE /* FireRay.sks in Resources */,
+				FFBEF0C818F3309A00006CFE /* LAVA.sks in Resources */,
 				5B36F1E118FD7CD50022F8E7 /* map10.png in Resources */,
 				FFBEF0B918F3309A00006CFE /* earthSymbol.png in Resources */,
 				FFBEF0C918F3309A00006CFE /* isometric_grass_and_water.tmx in Resources */,
@@ -520,9 +534,11 @@
 				FFBEF05318F3304400006CFE /* InfoPlist.strings in Resources */,
 				FFBEF0B518F3309A00006CFE /* joy_thumb@2x.png in Resources */,
 				5B7D5ACA18F4869300A50B00 /* bird.atlas in Resources */,
+				3539032618FDA07800A4367B /* FIRE.sks in Resources */,
 				5BF2C93018F5BADD0005C38C /* menuFundo.png in Resources */,
 				FFBEF0BA18F3309A00006CFE /* map.bmp in Resources */,
 				5B36F1E818FD7CF00022F8E7 /* mapa.tmx in Resources */,
+				3539032818FDA07800A4367B /* LIGHTNING.sks in Resources */,
 				357D456818F85984007FDFAF /* quarter.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
