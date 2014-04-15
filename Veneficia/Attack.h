@@ -14,6 +14,8 @@
 
 @interface Attack : NSObject
 
+@property(nonatomic) JSTileMap *map;
+
 + (instancetype)shareAttackInstance;
 - (MagicPower *)createFireAttackBy:(Character *)character;
 - (MagicPower *)createWaterAttackBy:(Character *)character;

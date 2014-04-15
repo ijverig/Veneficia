@@ -114,6 +114,7 @@
         // WORD
 		self.physicsWorld.contactDelegate = self;
 		self.physicsWorld.gravity = CGVectorMake(0.0, 0.0);
+
         
 		self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.map.frame];
 		self.name = @"WORLD";
@@ -519,8 +520,17 @@
 {
     [self shotSmall];
     SKEmitterNode *attack = [self.fusionPower shotPower:self.redWarrior];
-    if (attack!=nil)
+    if (attack!=nil){
         [self.map addChild:attack];
+        // Particula colisao
+        attack.zPosition = -101.0;
+        attack.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100, 100)];
+        attack.physicsBody.categoryBitMask = POWER;
+        attack.physicsBody.contactTestBitMask = GOOD_GUY | BAD_GUY | DOODADS;
+        attack.physicsBody.collisionBitMask = GOOD_GUY | BAD_GUY | DOODADS;
+        attack.physicsBody.allowsRotation = NO;
+   //     attack.physicsBody.usesPreciseCollisionDetection = YES;
+    }
     _lastTouched = @"";
 }
 

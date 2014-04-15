@@ -8,6 +8,7 @@
 
 #import "Attack.h"
 #import "MagicPower.h"
+#import "Enumerator.h"
 
 @implementation Attack
 
@@ -39,6 +40,7 @@
 //    fire.sourcePlayer = [character.name copy];
 //    fire.damage = character.attack;
     //fire.userData
+    
     fire.particlePosition  = character.position;
     [self direction:character.direction ofAttack:fire andRange:1000];
     return fire;
@@ -47,14 +49,17 @@
 - (SKEmitterNode *)createWaterAttackBy:(Character *)character;
 {
     NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"Water" ofType:@"sks"];
-    SKNode *node = (SKNode *)[NSKeyedUnarchiver unarchiveObjectWithFile:waterPath];
-    SKEmitterNode *water = node; 
+    SKEmitterNode *water = [NSKeyedUnarchiver unarchiveObjectWithFile:waterPath];
     water.name = @"WATER";
 //    water.sourcePlayer = @"opa";
 //    NSLog(@"Name: %@ %@", character.name, water.sourcePlayer);
    
 //    water.sourcePlayer = [character.name mutableCopy];
 //    water.damage = character.attack;
+    
+    
+    
+    
     water.particlePosition  = character.position;
     [self direction:character.direction ofAttack:water andRange:1000];
     
