@@ -8,7 +8,6 @@
 
 #import "Attack.h"
 #import "MagicPower.h"
-#import "Enumerator.h"
 
 @implementation Attack
 
@@ -32,39 +31,20 @@
     return [self shareAttackInstance];
 }
 
-- (SKEmitterNode *)createFireAttackBy:(Character *)character;
+- (SKEmitterNode *)createAttackBy:(Character *)character andPower:(NSString *)power
 {
-    NSString *fireRayPath = [[NSBundle mainBundle] pathForResource:@"FireRay" ofType:@"sks"];
-    SKEmitterNode *fire = [NSKeyedUnarchiver unarchiveObjectWithFile:fireRayPath];
-    fire.name = @"FIRE";
+    NSString *elementPath = [[NSBundle mainBundle] pathForResource:power ofType:@"sks"];
+    SKEmitterNode *attack = [NSKeyedUnarchiver unarchiveObjectWithFile:elementPath];
+    attack.name = power;
 //    fire.sourcePlayer = [character.name copy];
 //    fire.damage = character.attack;
     //fire.userData
-    
-    fire.particlePosition  = character.position;
-    [self direction:character.direction ofAttack:fire andRange:1000 andAngle:character.directionAngle];
-    return fire;
+    attack.particlePosition  = character.position;
+    [self direction:character.direction ofAttack:attack andRange:1000 andAngle:character.directionAngle];
+    return attack;
 }
 
-- (SKEmitterNode *)createWaterAttackBy:(Character *)character;
-{
-    NSString *waterPath = [[NSBundle mainBundle] pathForResource:@"Water" ofType:@"sks"];
-    SKEmitterNode *water = [NSKeyedUnarchiver unarchiveObjectWithFile:waterPath];
-    water.name = @"WATER";
-//    water.sourcePlayer = @"opa";
-//    NSLog(@"Name: %@ %@", character.name, water.sourcePlayer);
-   
-//    water.sourcePlayer = [character.name mutableCopy];
-//    water.damage = character.attack;
-    
-    
-    
-    
-    water.particlePosition  = character.position;
-    [self direction:character.direction ofAttack:water andRange:1000 andAngle:character.directionAngle];
-    
-    return water;
-}
+
 
 //
 // CONFIGURE THE SPELL
