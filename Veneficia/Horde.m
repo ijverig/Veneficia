@@ -70,78 +70,52 @@
 {
     for (Player *p in self.hordeEnemies)
     {
-        float distance = [self distanceBetweenPlayer:player andEnemy:p];
-//        NSLog(@"Distance: %f",distance);
-//        NSLog(@" %f", player.position.x / [self.map calculateAccumulatedFrame].size.width );
-
-        // Run From Player
-        if (distance < 300)
+        int aleatorio = arc4random_uniform(50);
+       // float distance = [self distanceBetweenPlayer:player andEnemy:p];
+        float angle = player.directionAngle;
+        
+        if (aleatorio > 0 && aleatorio  < 10)
         {
-            if (player.direction == LEFT)
-            {
-                [p movePlayer:CGPointMake( -0.1, .04)];
-            }else if (player.direction == RIGHT)
-            {
-                [p movePlayer:CGPointMake( 0.1, .04)];
-            }else if (player.direction == UP || player.direction == UP_LEFT || player.direction == UP_RIGHT)
-            {
-                [p movePlayer:CGPointMake( 0.1, -0.4)];
-            }else if (player.direction == DOWN || player.direction == DOWN_LEFT || player.direction == DOWN_RIGHT)
-            {
-                [p movePlayer:CGPointMake( -0.1, .4)];
-            }
+            [p movePlayer:CGPointMake( -.4,  .1)];
+        }else if ( aleatorio >= 10 && aleatorio < 20){
+            [p movePlayer:CGPointMake( .1,  .4)];
+        }else if ( aleatorio >= 20 && aleatorio < 30 ){
+            [p movePlayer:CGPointMake( .4,  0)];
+        }else if( aleatorio >= 30 && aleatorio < 40 ){
+            [p movePlayer:CGPointMake( -0.1,  -.4)];
+        }else if ( aleatorio > 40 ){
+            self.attack = [Attack shareAttackInstance];
+            SKEmitterNode *node = [self.attack createFireAttackBy:p];
+        //    [self.map addChild:node];
         }
         
-        // Enemy Attack
-        if (distance >= 300 && distance < 450)
-        {
-         //    SKEmitterNode *node = [self.attack createFireAttackBy:p];
-         //   [self.map addChild:node];
-            
-        }
         
-        // Persuit Enemy
-        if (distance > 450)
-        {
-            
-//            float directionX;
-//            float directionY;
-//            if (player.position.x > p.position.x)
-//                directionX = player.position.x - p.position.x;
-//            else
-//                directionX = p.position.x - player.position.x;
-//            
-//            if (player.position.y > p.position.y)
-//                directionY = player.position.y - p.position.y;
-//            else
-//                directionY = p.position.y - player.position.y;
-//            
-//            NSLog(@"Directionx:%f Directiony:%f", directionX, directionY);
-//            
-//            CGPoint derivatePoint = CGPointMake( directionX / 10000, directionY / 10000 );
-//            [p runAction:[SKAction moveTo:derivatePoint duration:1.0]];
-            
-            
-
-            if (player.direction == LEFT)
-            {
-                [p movePlayer:CGPointMake( -0.4, .1)];
-            }else if (player.direction == RIGHT)
-            {
-                [p movePlayer:CGPointMake( 0.1, .04)];
-            }else if (player.direction == UP || player.direction == UP_LEFT || player.direction == UP_RIGHT)
-            {
-                [p movePlayer:CGPointMake( 0.1, -0.4)];
-            }else if (player.direction == DOWN || player.direction == DOWN_LEFT || player.direction == DOWN_RIGHT)
-            {
-                [p movePlayer:CGPointMake( -0.1, .4)];
-            }
-            
-        }
+//        switch (aleatorio)
+//        {
+//            case 1:
+//                [p movePlayer:CGPointMake( -.4,  .1)];
+//                break;
+//            case 2:
+//                [p movePlayer:CGPointMake( .4,  -.1)];
+//                break;
+//            case 3:
+//                [p movePlayer:CGPointMake( -.5,  .7)];
+//                break;
+//            case 4:
+//                [p movePlayer:CGPointMake( .8,  0)];
+//                break;
+//            case 5:
+//                [p movePlayer:CGPointMake( 0.0,  -.8)];
+//                break;
+//                
+//            default:
+//                break;
+//        }
+        
+        
         
         
     }
-    
     
 }
 

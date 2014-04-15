@@ -114,7 +114,7 @@
         // WORD
 		self.physicsWorld.contactDelegate = self;
 		self.physicsWorld.gravity = CGVectorMake(0.0, 0.0);
-
+        
         
 		self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.map.frame];
 		self.name = @"WORLD";
@@ -214,21 +214,6 @@
         self.redWarrior.physicsBody.usesPreciseCollisionDetection = YES;
         
         
-        
-        // enemy player
-//        self.enemy = [[Player alloc] initWithPosition:CGPointMake(size.width + 100, size.height + 100)
-//                                                 name:@"ENEMY"
-//                                            direction:DOWN
-//                                                 life:1000
-//                                             velocity:20
-//                                               attack:1000
-//                                              defense:1000
-//                                            atlasName:@"megaMan"
-//                                                 size:CGSizeMake(36, 68)];
-//        [self.map addChild:self.enemy];
-        
-        
-        
         // HORDE CONFIGURATION
         self.horde = [[Horde alloc] initHordeNumEnemies:2 inMap:self.map];
 
@@ -251,82 +236,6 @@
     CGPoint location = [touch locationInNode:self];
     SKNode *node = [self nodeAtPoint:location];
     
-//    if ([node.name isEqualToString:@"FIRE"])
-//    {
-//        NSString *fireRayPath = [[NSBundle mainBundle] pathForResource:@"FireRay" ofType:@"sks"];
-//		self.emmiter = [NSKeyedUnarchiver unarchiveObjectWithFile:fireRayPath];
-//        self.emmiter.particlePosition = self.redWarrior.position;
-//        [self.map addChild:self.emmiter];
-//        
-//        if (self.redWarrior.direction == LEFT)
-//        {
-//            self.emmiter.emissionAngle = 0;
-//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:-self.view.bounds.size.width duration:1.0],
-//                                                        [SKAction removeFromParent]]]];
-//        }
-//        
-//        if (self.redWarrior.direction == RIGHT)
-//        {
-//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:self.view.bounds.size.width duration:1.0],
-//                                                         [SKAction removeFromParent]]]];
-//        }
-//        
-//        if (self.redWarrior.direction == UP)
-//        {
-//            self.emmiter.emissionAngle = -M_PI/2;
-//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:self.view.bounds.size.width duration:1.0],
-//                                                        [SKAction removeFromParent]]]];
-//        }
-//        
-//        if (self.redWarrior.direction == DOWN)
-//        {
-//            self.emmiter.emissionAngle = M_PI/2;
-//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:-self.view.bounds.size.width duration:1.0],
-//                                                         [SKAction removeFromParent]]]];
-//        }
-//    }
-//    
-//    if ([node.name isEqualToString:@"WATER"])
-//    {
-//        NSString *WaterRay = [[NSBundle mainBundle] pathForResource:@"Water" ofType:@"sks"];
-//		self.emmiter = [NSKeyedUnarchiver unarchiveObjectWithFile:WaterRay];
-//        self.emmiter.particlePosition = self.redWarrior.position;
-//        [self.map addChild:self.emmiter];
-//        
-//        if (self.redWarrior.direction == LEFT)
-//        {
-//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:-self.view.bounds.size.width duration:1.0],
-//                                                         [SKAction removeFromParent]]]];
-//        }
-//        
-//        if (self.redWarrior.direction == RIGHT)
-//        {
-//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToX:self.view.bounds.size.width duration:1.0],
-//                                                         [SKAction removeFromParent]]]];
-//        }
-//        
-//        if (self.redWarrior.direction == UP)
-//        {
-//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:self.view.bounds.size.width duration:1.0],
-//                                                         [SKAction removeFromParent]]]];
-//        }
-//        
-//        if (self.redWarrior.direction == DOWN)
-//        {
-//            [self.emmiter runAction:[SKAction sequence:@[[SKAction moveToY:-self.view.bounds.size.width duration:1.0],
-//                                                         [SKAction removeFromParent]]]];
-//        }
-//    }
-//    
-//    if ([node.name isEqualToString:@"EARTH"])
-//    {
-//        NSLog(@"=== EARTH SPELL ===");
-//    }
-//    
-//    if ([node.name isEqualToString:@"SHOT"])
-//    {
-//        [self.fusionPower shotPower];
-//    }
     
     if ([node.name isEqualToString:@"FIRE"] && ![_lastTouched isEqualToString:@"FIRE"])
     {
@@ -520,17 +429,23 @@
 {
     [self shotSmall];
     SKEmitterNode *attack = [self.fusionPower shotPower:self.redWarrior];
+    
+    
     if (attack!=nil){
         [self.map addChild:attack];
+        NSLog(@"enter here");
         // Particula colisao
         attack.zPosition = -101.0;
+    
         attack.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:CGSizeMake(100, 100)];
         attack.physicsBody.categoryBitMask = POWER;
         attack.physicsBody.contactTestBitMask = GOOD_GUY | BAD_GUY | DOODADS;
         attack.physicsBody.collisionBitMask = GOOD_GUY | BAD_GUY | DOODADS;
         attack.physicsBody.allowsRotation = NO;
-   //     attack.physicsBody.usesPreciseCollisionDetection = YES;
+  //      attack.physicsBody.usesPreciseCollisionDetection = YES;
     }
+
+    
     _lastTouched = @"";
 }
 

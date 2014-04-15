@@ -20,7 +20,7 @@
     SKView * skView = (SKView *)self.view;
     skView.showsFPS = YES;
     skView.showsNodeCount = YES;
-
+    skView.showsPhysics = YES;
     // Create Joystick
     Joystick *joystick = [[Joystick alloc] initWithFrame:CGRectMake(35, self.view.bounds.size.height  - 300, 128, 128)];
     [joystick setThumbImage:[UIImage imageNamed:@"joy_thumb.png"]

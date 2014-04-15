@@ -37,7 +37,7 @@
         int count = 0;
         for (NSDictionary *a in array)
         {
-            SKSpriteNode *s = [[SKSpriteNode alloc] initWithColor:[UIColor redColor]
+            SKSpriteNode *s = [[SKSpriteNode alloc] initWithColor:[UIColor clearColor]
                                                              size:CGSizeMake([a[@"width"] integerValue],
                                                                              [a[@"height"] integerValue] )];
            
