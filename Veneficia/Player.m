@@ -41,6 +41,10 @@
         self.actionUP_RIGHT = [SKAction animateWithTextures:self.textureUP_RIGHT timePerFrame:0.1];
         self.actionDOWN_LEFT = [SKAction animateWithTextures:self.textureDOWN_LEFT timePerFrame:0.1];
         self.actionDOWN_RIGHT = [SKAction animateWithTextures:self.textureDOWN_RIGHT timePerFrame:0.1];
+        
+        // Collision Direction
+        self.userData = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"NONE",@"MOVE-DIRECTION", nil];
+        
     }
     
     return self;
@@ -48,19 +52,6 @@
 
 #pragma mark Directions
 
-- (void)Left
-{
-    float newLeft = self.position.x - self.velocity;
-    
-    if (![self hasActions])
-    {
-//        [self runAction:[SKAction group:@[ self.actionLEFT, [SKAction moveToX:newLeft duration:0.01] ]]];
-        [self runAction:[SKAction sequence:@[self.actionLEFT]]];
-        self.direction = LEFT;
-    }
-    
-    [self setPosition:CGPointMake(newLeft, self.position.y)];
-}
 
 -(void) movePlayer:(CGPoint)dir
 {
@@ -95,10 +86,6 @@
     }
     
     // Done!
-    
-    //////////////////////////////////
-    //////////////////////////////////
-    //////////////////////////////////
     
     //NSLog(@"Angle: %f", angle);
     if (![self hasActions])
@@ -175,7 +162,6 @@
             self.direction = DOWN;
             
         }
-        
         // Increment the angle sum
         angleSum += 45;
         
@@ -196,13 +182,29 @@
     
     if (![self hasActions])
     {
-        //if (dir.x)
         [self runAction:[SKAction sequence:@[self.actionRIGHT]]];
         self.direction = RIGHT;
     }
-    
-    [self setPosition:CGPointMake(newRight, self.position.y)];
+    // Hit in the wall
+//    NSLog(@"enter here");
+//    if (! [self.userData[@"DIRECTION"] isEqualToString:@"RIGHT"] )
+        [self setPosition:CGPointMake(newRight, self.position.y)];
 }
+
+- (void)Left
+{
+    float newLeft = self.position.x - self.velocity;
+    
+    if (![self hasActions])
+    {
+        [self runAction:[SKAction sequence:@[self.actionLEFT]]];
+        self.direction = LEFT;
+    }
+    
+    [self setPosition:CGPointMake(newLeft, self.position.y)];
+}
+
+
 
 - (void)Up
 {

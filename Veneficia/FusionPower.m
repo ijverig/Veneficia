@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Frelei. All rights reserved.
 //
 
+#define STACK_SIZE      2
+
+
 #import "FusionPower.h"
 
 @interface FusionPower ()
@@ -14,7 +17,6 @@
 @property (nonatomic) NSMutableDictionary *fusions;
 @property (nonatomic) SKNode *mapNode;
 @property (nonatomic) CGSize size;
-#define STACK_SIZE      2
 
 @end
 

@@ -12,8 +12,11 @@
 #import "JSTileMap.h"
 #import "Attack.h"
 #import "FusionPower.h"
+#import "Enumerator.h"
+#import "Doodads.h"
+#import "Horde.h"
 
-@interface GameScene () <JoystickDelegate>
+@interface GameScene () <JoystickDelegate, SKPhysicsContactDelegate>
 
 @property(nonatomic) Joystick *joystick;
 @property(nonatomic) SKEmitterNode *emmiter;
@@ -27,14 +30,71 @@
 @property(nonatomic) SKSpriteNode *shootButton2;
 @property(nonatomic) SKSpriteNode *shootButton3;
 @property(nonatomic) SKSpriteNode *shootButton4;
+@property(nonatomic) Doodads *doodads;
+@property(nonatomic) Horde *horde;
+
 
 @end
 
 @implementation GameScene
+
+
+#pragma mark - Contact Delegate
+
+
+-(void)didBeginContact:(SKPhysicsContact *)contact
 {
-    // control variables
-    int count;
+    // Evitar bounce do player ao colidir com algo
+    if ([contact.bodyB.node.name isEqualToString:@"RED_WARRIOR"]) // Nome do jogador
+    {
+        if ([contact.bodyB.node isKindOfClass:[Player class]])
+        {
+            Player *p = (Player*) contact.bodyB.node;
+            if (p.direction == UP)
+                p.userData[@"DIRECTION"] = @"UP";
+            if (p.direction == DOWN)
+                p.userData[@"DIRECTION"] = @"DOWN";
+            if (p.direction == LEFT)
+                p.userData[@"DIRECTION"] = @"LEFT";
+            if (p.direction == RIGHT)
+                p.userData[@"DIRECTION"] = @"RIGHT";
+        }
+    }
+    //    NSLog(@"Begin ContactA %@",contact.bodyA.node.name);
+    //    NSLog(@"Begin ContactB %@",contact.bodyB.node.name);
+    
+    
+    
+    //	NSLog(@"contato: %@ - %@",contact.bodyA.node.name,contact.bodyB.node.name);
+    //	NSLog(@"local: (%.0f,%.0f)",contact.contactPoint.x,contact.contactPoint.y);
+    //	NSLog(@"impulso: %f",contact.collisionImpulse);
+    
 }
+
+
+- (void)didEndContact:(SKPhysicsContact *)contact
+{
+    
+    // Evitar bounce do player ao colidir com algo
+    if ([contact.bodyB.node.name isEqualToString:@"RED_WARRIOR"]) // Nome do jogador
+    {
+        if ([contact.bodyB.node isKindOfClass:[Player class]])
+        {
+            Player *p = (Player*) contact.bodyB.node;
+            p.userData[@"DIRECTION"] = @"NONE";
+        }
+    }
+    
+    //    NSLog(@"END ContactA %@",contact.bodyA.node.name);
+    //    NSLog(@"END ContactB %@",contact.bodyB.node.name);
+    
+    
+    
+}
+
+
+
+
 
 - (id)initWithSize:(CGSize)size andJoystick:(Joystick *)joystick
 {
@@ -45,12 +105,24 @@
         self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
 //        TILE MAP
 //        JSTileMap* tiledMap = [JSTileMap mapNamed:@"isometric_grass_and_water.tmx"];
-        self.map = [JSTileMap mapNamed:@"map.tmx"];
-//        CGRect mapBounds = [self.map calculateAccumulatedFrame];
-//        NSLog(@"%@",NSStringFromCGRect(mapBounds));
-//        NSLog(@"%f %f",mapBounds.size.height, mapBounds.size.width);
+        self.map = [JSTileMap mapNamed:@"mapa.tmx"];
+        CGRect mapBounds = [self.map calculateAccumulatedFrame];
         self.map.position = CGPointMake(-500, -500);
         [self addChild:self.map];
+        
+        
+        // WORD
+		self.physicsWorld.contactDelegate = self;
+		self.physicsWorld.gravity = CGVectorMake(0.0, 0.0);
+        
+		self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.map.frame];
+		self.name = @"WORLD";
+		self.physicsBody.categoryBitMask = WORLD;
+		self.physicsBody.collisionBitMask = WORLD;
+        
+        // IMMUTABLE OBJECTS
+        self.doodads  = [[Doodads alloc] initWithMap:self.map];
+        
         
         //shooters
         _shootButton1 = [[SKSpriteNode alloc] initWithImageNamed:@"quarter 2"];
@@ -122,7 +194,7 @@
         self.joystick.delegate = self;
         
         // main player
-        self.redWarrior = [[Player alloc] initWithPosition:CGPointMake(size.width, size.height)
+        self.redWarrior = [[Player alloc] initWithPosition:CGPointMake(mapBounds.size.width / 2, mapBounds.size.height / 2)
                                                       name:@"RED_WARRIOR"
                                                  direction:DOWN
                                                       life:1000
@@ -132,18 +204,33 @@
                                                  atlasName:@"redWarrior"
                                                       size:CGSizeMake(100, 106)];
         [self.map addChild:self.redWarrior];
+        self.redWarrior.zPosition = -101.0;
+        self.redWarrior.physicsBody = [SKPhysicsBody bodyWithRectangleOfSize:self.redWarrior.size];
+        self.redWarrior.physicsBody.categoryBitMask = GOOD_GUY;
+        self.redWarrior.physicsBody.contactTestBitMask = BAD_GUY | DOODADS | POWER;
+        self.redWarrior.physicsBody.collisionBitMask = BAD_GUY | DOODADS | POWER;
+        self.redWarrior.physicsBody.allowsRotation = NO;
+        self.redWarrior.physicsBody.usesPreciseCollisionDetection = YES;
+        
+        
         
         // enemy player
-        self.enemy = [[Player alloc] initWithPosition:CGPointMake(size.width + 100, size.height + 100)
-                                                 name:@"ENEMY"
-                                            direction:DOWN
-                                                 life:1000
-                                             velocity:20
-                                               attack:1000
-                                              defense:1000
-                                            atlasName:@"megaMan"
-                                                 size:CGSizeMake(36, 68)];
-        [self.map addChild:self.enemy];
+//        self.enemy = [[Player alloc] initWithPosition:CGPointMake(size.width + 100, size.height + 100)
+//                                                 name:@"ENEMY"
+//                                            direction:DOWN
+//                                                 life:1000
+//                                             velocity:20
+//                                               attack:1000
+//                                              defense:1000
+//                                            atlasName:@"megaMan"
+//                                                 size:CGSizeMake(36, 68)];
+//        [self.map addChild:self.enemy];
+        
+        
+        
+        // HORDE CONFIGURATION
+        self.horde = [[Horde alloc] initHordeNumEnemies:2 inMap:self.map];
+
         
         // spell factory
         self.factoryAttack = [Attack shareAttackInstance];
@@ -439,26 +526,9 @@
 
 - (void)joystick:(Joystick *)aJoystick didUpdate:(CGPoint)dir
 {
+    
     [self.redWarrior movePlayer:dir];
-//    if (dir.x > 0)
-//    {
-//        [self.redWarrior Right];
-//    }
-//    
-//    if (dir.x < 0)
-//    {
-//        [self.redWarrior Left];
-//    }
-//    
-//    if (dir.y > 0)
-//    {
-//        [self.redWarrior Down];
-//    }
-//    
-//    if (dir.y < 0)
-//    {
-//        [self.redWarrior Up];
-//    }
+    
 }
 
 #pragma mark - Camera Position
@@ -485,10 +555,14 @@
     }
     
     [self centerOnNode:self.redWarrior];
-    [self dummyEnemy];
-    [self dummyAttackAndHeal];
+
+    [self.horde logicHorder:self.redWarrior];
+    
+    //    [self dummyEnemy];
+    //    [self dummyAttackAndHeal];
 }
 
+/*
 - (void)dummyEnemy
 {
     int rand = arc4random_uniform(40);
@@ -523,29 +597,33 @@
             break;
     }
 }
-
+ */
+ 
+ 
+/*
 - (void)dummyAttackAndHeal
 {
     switch (arc4random_uniform(200))
     {
         case 10:
-            [self.redWarrior decreaseLifeByAmount:247.0];
+//            [self.redWarrior decreaseLifeByAmount:247.0];
 //            NSLog(@"Life: %4.0f | Dead: %@", self.redWarrior.life.amount, [self.redWarrior isAlive] ? @"nope" : @"yep");
             break;
             
         case 20:
-            [self.redWarrior increaseLifeByAmount:183.0];
+//            [self.redWarrior increaseLifeByAmount:183.0];
 //            NSLog(@"Life: %4.0f | Dead: %@", self.redWarrior.life.amount, [self.redWarrior isAlive] ? @"nope" : @"yep");
             break;
 
         case 30:
-            [self.enemy decreaseLifeByAmount:259.0];
+ //           [self.enemy decreaseLifeByAmount:259.0];
             break;
             
         case 40:
-            [self.enemy increaseLifeByAmount:163.0];
+//            [self.enemy increaseLifeByAmount:163.0];
             break;
     }
 }
 
+ */
 @end
