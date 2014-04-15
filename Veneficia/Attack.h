@@ -14,6 +14,8 @@
 
 @interface Attack : NSObject
 
+@property(nonatomic) JSTileMap *map;
+
 + (instancetype)shareAttackInstance;
 - (SKEmitterNode *)createAttackBy:(Character *)character andPower:(NSString *)power;
 

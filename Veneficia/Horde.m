@@ -14,10 +14,13 @@
 #import "Player.h"
 #import "JSTileMap.h"
 #import "Enumerator.h"
+#import "Attack.h"
+
 
 @interface Horde ()
 
 @property(nonatomic) JSTileMap *map;
+@property(nonatomic) Attack *attack;
 
 @end
 
@@ -30,6 +33,7 @@
     if (self)
     {
         self.map = map;
+        self.attack = [Attack shareAttackInstance];
         _hordeEnemies = [[NSMutableArray alloc] init];
         CGRect mapBounds = [map calculateAccumulatedFrame];
         NSString *name = @"Enemy";
@@ -54,6 +58,7 @@
             enemy.physicsBody.contactTestBitMask = GOOD_GUY |DOODADS | POWER;
             enemy.physicsBody.collisionBitMask = GOOD_GUY | DOODADS | POWER;
             enemy.physicsBody.allowsRotation = NO;
+            enemy.physicsBody.usesPreciseCollisionDetection = YES;
             [_hordeEnemies addObject:enemy];
         }
         
@@ -74,7 +79,7 @@
         {
             if (player.direction == LEFT)
             {
-                [p movePlayer:CGPointMake(- 0.1, .04)];
+                [p movePlayer:CGPointMake( -0.1, .04)];
             }else if (player.direction == RIGHT)
             {
                 [p movePlayer:CGPointMake( 0.1, .04)];
@@ -90,7 +95,8 @@
         // Enemy Attack
         if (distance >= 300 && distance < 450)
         {
-            
+         //    SKEmitterNode *node = [self.attack createFireAttackBy:p];
+         //   [self.map addChild:node];
             
         }
         
@@ -114,6 +120,7 @@
 //            
 //            CGPoint derivatePoint = CGPointMake( directionX / 10000, directionY / 10000 );
 //            [p runAction:[SKAction moveTo:derivatePoint duration:1.0]];
+            
             
 
             if (player.direction == LEFT)
