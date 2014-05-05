@@ -14,6 +14,7 @@
 		3539346F18F70808007309BA /* lavaSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 3539346E18F70808007309BA /* lavaSymbol.png */; };
 		357D456818F85984007FDFAF /* quarter.png in Resources */ = {isa = PBXBuildFile; fileRef = 357D456718F85984007FDFAF /* quarter.png */; };
 		357D456A18F86BF0007FDFAF /* quarter 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 357D456918F86BF0007FDFAF /* quarter 2.png */; };
+		35A07688190995520030DD2F /* mapa.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 5B36F1F518FD983D0022F8E7 /* mapa.tmx */; };
 		35F8025C18F71F0B007A445E /* lifeSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 35F8025B18F71F0B007A445E /* lifeSymbol.png */; };
 		35F8025E18F72123007A445E /* lightningSymbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 35F8025D18F72123007A445E /* lightningSymbol.png */; };
 		5B36F1D318FD7C790022F8E7 /* Doodads.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B36F1CF18FD7C790022F8E7 /* Doodads.m */; };
@@ -33,7 +34,6 @@
 		5B36F1F218FD97920022F8E7 /* outpost.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B36F1EC18FD97920022F8E7 /* outpost.png */; };
 		5B36F1F318FD97920022F8E7 /* well.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B36F1ED18FD97920022F8E7 /* well.png */; };
 		5B36F1F418FD97920022F8E7 /* wellfountain.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B36F1EE18FD97920022F8E7 /* wellfountain.png */; };
-		5B36F1F618FD983D0022F8E7 /* mapa.tmx in Resources */ = {isa = PBXBuildFile; fileRef = 5B36F1F518FD983D0022F8E7 /* mapa.tmx */; };
 		5B7D5ACA18F4869300A50B00 /* bird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC618F4869300A50B00 /* bird.atlas */; };
 		5B7D5ACB18F4869300A50B00 /* redWarrior.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC718F4869300A50B00 /* redWarrior.atlas */; };
 		5B7D5ACC18F4869300A50B00 /* swordWarrior.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 5B7D5AC818F4869300A50B00 /* swordWarrior.atlas */; };
@@ -531,6 +531,7 @@
 				FFBEF06918F3304400006CFE /* Images.xcassets in Resources */,
 				FFBEF05F18F3304400006CFE /* Main_iPad.storyboard in Resources */,
 				FFBEF0B318F3309A00006CFE /* isometric_grass_and_water.png in Resources */,
+				35A07688190995520030DD2F /* mapa.tmx in Resources */,
 				3539032718FDA07800A4367B /* LIFE.sks in Resources */,
 				3539346F18F70808007309BA /* lavaSymbol.png in Resources */,
 				5B36F1DF18FD7CD50022F8E7 /* map00.png in Resources */,
@@ -548,7 +549,7 @@
 				5B36F1E618FD7CD50022F8E7 /* map22.png in Resources */,
 				357D456A18F86BF0007FDFAF /* quarter 2.png in Resources */,
 				5B36F1F018FD97920022F8E7 /* goldMine.png in Resources */,
-				FFBEF0C818F3309A00006CFE /* FireRay.sks in Resources */,
+				FFBEF0C818F3309A00006CFE /* LAVA.sks in Resources */,
 				FFBEF0C818F3309A00006CFE /* LAVA.sks in Resources */,
 				5B36F1E118FD7CD50022F8E7 /* map10.png in Resources */,
 				FFBEF0B918F3309A00006CFE /* earthSymbol.png in Resources */,
@@ -562,7 +563,6 @@
 				5BF2C93018F5BADD0005C38C /* menuFundo.png in Resources */,
 				5B36F1EF18FD97920022F8E7 /* cute.png in Resources */,
 				FFBEF0BA18F3309A00006CFE /* map.bmp in Resources */,
-				5B36F1E818FD7CF00022F8E7 /* mapa.tmx in Resources */,
 				3539032818FDA07800A4367B /* LIGHTNING.sks in Resources */,
 				357D456818F85984007FDFAF /* quarter.png in Resources */,
 			);
